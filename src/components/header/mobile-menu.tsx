@@ -11,7 +11,6 @@ import { IMenuItem } from '@/types/common';
 import { cn, isExternalLink } from '@/lib/utils';
 import { useTrack } from '@/hooks/use-tracking';
 import { Link } from '@/components/ui/link';
-import { Icons } from '@/components/icons';
 
 interface MobileMenuProps {
   items: IMenuItem[];
@@ -21,8 +20,7 @@ function MobileMenu({ items }: MobileMenuProps) {
   const track = useTrack();
   const [open, setOpen] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [discordLink, githubLink] = homeHeaderLinks.social;
-  const [loginLink, signUpLink] = homeHeaderLinks.auth;
+  const [contactLink, rendezvousLink] = homeHeaderLinks.auth;
   const pathname = usePathname();
 
   useEffect(() => {
@@ -188,45 +186,24 @@ function MobileMenu({ items }: MobileMenuProps) {
                 </NextLink>
               );
             })}
-            <NextLink
-              href={discordLink.href}
-              className="border-b border-foreground/10 py-3.5 text-base font-medium tracking-tight text-background transition-colors hover:text-gray-30"
-              onClick={() => setOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {discordLink.label}
-            </NextLink>
-            <NextLink
-              href={githubLink.href}
-              className="flex items-center gap-1 border-b border-foreground/10 py-3.5 text-base font-medium tracking-tight text-background transition-colors hover:text-gray-30"
-              onClick={() => setOpen(false)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${githubLink.label} repository (${githubLink.metric} stars)`}
-            >
-              <Icons.github className="text-background" size={18} aria-hidden="true" />
-              <span className="sr-only">{githubLink.label}</span>
-              <span>{githubLink.metric}</span>
-            </NextLink>
           </nav>
 
           <div className="mt-5 flex flex-col gap-2">
             <div className="flex gap-1">
               <Link
-                href={loginLink.href}
+                href={contactLink.href}
                 variant="secondary"
                 className="flex-1 border-gray-70 text-background"
-                onClick={() => track('signin', { location: 'navigation-mobile' })}
+                onClick={() => track('contact', { location: 'navigation-mobile' })}
               >
-                {loginLink.label}
+                {contactLink.label}
               </Link>
               <Link
-                href={signUpLink.href}
+                href={rendezvousLink.href}
                 className="flex-1 bg-background text-foreground hover:bg-gray-12"
-                onClick={() => track('signup', { location: 'navigation-mobile' })}
+                onClick={() => track('rendezvous', { location: 'navigation-mobile' })}
               >
-                {signUpLink.label}
+                {rendezvousLink.label}
               </Link>
             </div>
           </div>

@@ -5,19 +5,18 @@ import { homeHeaderLinks } from '@/constants/home';
 
 import { useTrack } from '@/hooks/use-tracking';
 import { Link } from '@/components/ui/link';
-import { Icons } from '@/components/icons';
 
 export default function HeaderActions() {
   const track = useTrack();
   const [onLightSection, setOnLightSection] = useState(false);
-  const [discordLink, githubLink] = homeHeaderLinks.social;
-  const [loginLink, signUpLink] = homeHeaderLinks.auth;
+  const [facebookLink] = homeHeaderLinks.social;
+  const [contactLink, rendezvousLink] = homeHeaderLinks.auth;
 
   useEffect(() => {
     const lightSections = document.querySelectorAll<HTMLElement>('[data-header-theme="light"]');
     if (lightSections.length === 0) return;
 
-    const headerHeight = 56; // ~h-11 (44px) + pt-2.5 (10px)
+    const headerHeight = 56;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -37,39 +36,27 @@ export default function HeaderActions() {
   return (
     <nav aria-label="Actions" className="hidden items-center gap-16 lg:flex">
       <div className="flex items-center gap-1">
-        <Link href={discordLink.href} size="small" target="_blank" rel="noopener noreferrer">
-          {discordLink.label}
-        </Link>
-        <Link
-          href={githubLink.href}
-          size="small"
-          className="gap-1 [&_svg]:size-4.5"
-          aria-label={`${githubLink.label} repository (${githubLink.metric} stars)`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icons.github className="text-background" size={18} aria-hidden="true" />
-          <span className="sr-only">{githubLink.label}</span>
-          <span>{githubLink.metric}</span>
+        <Link href={facebookLink.href} size="small" target="_blank" rel="noopener noreferrer">
+          {facebookLink.label}
         </Link>
       </div>
 
       <div className="flex items-center gap-1">
         <Link
-          href={loginLink.href}
+          href={contactLink.href}
           variant={onLightSection ? 'primaryBlack' : 'secondary'}
           size="small"
           className="bg-background transition-colors duration-300"
-          onClick={() => track('signin', { location: 'navigation' })}
+          onClick={() => track('contact', { location: 'navigation' })}
         >
-          {loginLink.label}
+          {contactLink.label}
         </Link>
         <Link
-          href={signUpLink.href}
+          href={rendezvousLink.href}
           size="small"
-          onClick={() => track('signup', { location: 'navigation' })}
+          onClick={() => track('rendezvous', { location: 'navigation' })}
         >
-          {signUpLink.label}
+          {rendezvousLink.label}
         </Link>
       </div>
     </nav>

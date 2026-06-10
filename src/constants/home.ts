@@ -17,12 +17,12 @@ import { Alignment, Fit } from '@rive-app/react-canvas';
 
 export const homeHeaderLinks = {
   social: [
-    { id: 'discord', label: 'Discord', href: 'https://unkey.com/discord' },
-    { id: 'github', label: 'GitHub', href: GITHUB_URL, metric: '5.3k' },
+    { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/virazait' },
+    { id: 'github', label: 'GitHub', href: GITHUB_URL },
   ],
   auth: [
-    { id: 'login', label: 'Login', href: APP_URL },
-    { id: 'signUp', label: 'Sign Up', href: SIGN_UP_URL },
+    { id: 'contact', label: 'Contact', href: '/contact' },
+    { id: 'rendezvous', label: 'Prenez rendez-vous', href: SIGN_UP_URL },
   ],
 } as const;
 
