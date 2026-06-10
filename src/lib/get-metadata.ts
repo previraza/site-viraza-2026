@@ -3,7 +3,7 @@ import config from '@/configs/website-config';
 
 import { toAbsoluteSiteUrl } from '@/lib/site-url';
 
-// Pass `title` → "{title} | Unkey". Pass `tagline` (hero pages) → "Unkey | {tagline}".
+// Pass `title` → "{title} | Viraza". Pass `tagline` (hero pages) → "Viraza | {tagline}".
 type Metadata = {
   title?: string;
   tagline?: string;

@@ -57,7 +57,7 @@ function PerplexityIcon({ className }: IServiceIconProps) {
 
 function ExploreWithAI({ className, slug, title }: IExploreWithAIProps) {
   const markdownUrl = toAbsoluteSiteUrl(`/blog/${slug}.md`);
-  const prompt = `Read this blog post by Unkey and help me explore it: "${title}" — ${markdownUrl}`;
+  const prompt = `Read this blog post and help me explore it: "${title}" — ${markdownUrl}`;
   const encoded = encodeURIComponent(prompt);
 
   const services = [

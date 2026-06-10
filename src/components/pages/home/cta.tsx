@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils';
 import NextLink from 'next/link';
 
 interface ICtaProps {
@@ -5,11 +6,12 @@ interface ICtaProps {
   subheading: string;
   buttonLabel: string;
   buttonHref: string;
+  className?: string;
 }
 
-function Cta({ heading, subheading, buttonLabel, buttonHref }: ICtaProps) {
+function Cta({ heading, subheading, buttonLabel, buttonHref, className }: ICtaProps) {
   return (
-    <section className="relative w-full py-20 md:py-28">
+    <section className={cn('relative w-full py-20 md:py-28', className)}>
       <div className="absolute inset-0 bg-gradient-to-b from-emerald/5 to-transparent" aria-hidden />
       <div className="container relative z-10">
         <div className="mx-auto max-w-3xl rounded-2xl border border-emerald/20 bg-gradient-to-b from-emerald/10 to-emerald/5 p-12 text-center md:p-16">

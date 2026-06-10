@@ -8,7 +8,7 @@ import PricingMainContent from '@/components/pages/pricing/pricing-main-content'
 
 export const metadata = getMetadata({
   title: 'Pricing',
-  description: 'Pricing for Unkey Deploy and Api Management',
+  description: 'Nos solutions et tarifs pour accompagner votre transformation digitale.',
   pathname: '/pricing',
 });
 
