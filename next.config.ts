@@ -1,6 +1,10 @@
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
+  // Cache configuration for both dev and production builds
+  cacheMaxMemorySize: 50 * 1024 * 1024, // 50MB in-memory cache
+  generateEtags: true,
+
   experimental: {
     optimizePackageImports: [
       'lucide-react',
@@ -10,6 +14,11 @@ const nextConfig: NextConfig = {
       'motion',
       'shiki',
     ],
+    // ISR cache flushed to disk for persistence across builds
+    isrFlushToDisk: true,
+    // Turbopack filesystem cache for faster dev and production builds
+    turbopackFileSystemCacheForDev: true,
+    turbopackFileSystemCacheForBuild: true,
   },
   outputFileTracingExcludes: {
     '*': [
