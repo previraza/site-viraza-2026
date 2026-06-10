@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 36" fill="none">
+  <path d="M10 18C10 11.3726 15.3726 6 22 6C28.6274 6 34 11.3726 34 18C34 24.6274 28.6274 30 22 30C15.3726 30 10 24.6274 10 18Z" fill="#10b981"/>
+  <path d="M22 10L26 16L22 22L18 16L22 10Z" fill="#040406"/>
+  <text x="42" y="24" font-family="Inter, system-ui, sans-serif" font-weight="600" font-size="20" fill="white" letter-spacing="0.02em">Viraza</text>
+</svg>
