@@ -4,14 +4,14 @@ slug: '/privacy'
 isDraft: false
 updatedAt: '2023-07-08T10:56:56.110Z'
 seo:
-  title: 'Privacy Policy | Unkey Inc.'
+  title: 'Privacy Policy | Viraza Inc.'
   description: 'Privacy Policy - Legal information and policies'
   noIndex: false
 ---
 
-Unkey Inc. (the "Company") is committed to maintaining robust privacy protections for its users. Our Privacy Policy ("Privacy Policy") is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service.
+Viraza Inc. (the "Company") is committed to maintaining robust privacy protections for its users. Our Privacy Policy ("Privacy Policy") is designed to help you understand how we collect, use and safeguard the information you provide to us and to assist you in making informed decisions when using our Service.
 
-- For purposes of this Agreement, "Site" refers to the Company's website, which can be accessed at https://unkey.com
+- For purposes of this Agreement, "Site" refers to the Company's website, which can be accessed at https://viraza.net
 
 - "Service" refers to the Company's services accessed via the Site.
 
@@ -19,7 +19,7 @@ Unkey Inc. (the "Company") is committed to maintaining robust privacy protection
 
 - "You" refers to you, as a user of our Site or our Service.
 
-By accessing our Site or our Service, you accept our Privacy Policy and Terms of Use (https://unkey.com/policies/terms), and you consent to our collection, storage, use and disclosure of your Personal Information as described in this Privacy Policy.
+By accessing our Site or our Service, you accept our Privacy Policy and Terms of Use (https://viraza.net/policies/terms), and you consent to our collection, storage, use and disclosure of your Personal Information as described in this Privacy Policy.
 
 ## I. INFORMATION WE COLLECT
 
@@ -37,7 +37,7 @@ In addition to the information provided automatically by your browser when you v
 
 ### 3. Children's Privacy
 
-The Site and the Service are not directed to anyone under the age of 13. The Site does not knowingly collect or solicit information from anyone under the age of 13, or allow anyone under the age of 13 to sign up for the Service. In the event that we learn that we have gathered personal information from anyone under the age of 13 without the consent of a parent or guardian, we will delete that information as soon as possible. If you believe we have collected such information, please contact us at support@unkey.com.
+The Site and the Service are not directed to anyone under the age of 13. The Site does not knowingly collect or solicit information from anyone under the age of 13, or allow anyone under the age of 13 to sign up for the Service. In the event that we learn that we have gathered personal information from anyone under the age of 13 without the consent of a parent or guardian, we will delete that information as soon as possible. If you believe we have collected such information, please contact us at info@viraza.net.
 
 ## II. HOW WE USE AND SHARE INFORMATION
 
@@ -73,4 +73,4 @@ The Company reserves the right to change this policy and our Terms of Service at
 
 ## VII. CONTACT US
 
-If you have any questions regarding this Privacy Policy or the practices of this Site, please contact us by sending an email to support@unkey.com.
+If you have any questions regarding this Privacy Policy or the practices of this Site, please contact us by sending an email to info@viraza.net.

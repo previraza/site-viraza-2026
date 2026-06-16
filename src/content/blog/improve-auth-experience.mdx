@@ -16,7 +16,7 @@ The sign-in flow for your application is the gateway and sometimes the first imp
   height="1080"
 />
 
-The problem is, what account did I use to sign up for this account? Was it Github? Was it Google? Or did I use my email? In great applications, Unkey included, account linking is used behind the scenes, which can help mitigate this issue.
+The problem is, what account did I use to sign up for this account? Was it Github? Was it Google? Or did I use my email? In great applications, Viraza included, account linking is used behind the scenes, which can help mitigate this issue.
 
 ## What is Account linking?
 
@@ -43,7 +43,7 @@ To improve the experience futher we can add an indicator to the sign-in page to 
 
 > If you want to see an example that implements the code we without any auth provider check out this [code sandbox](https://codesandbox.io/p/devbox/jh34y6) out.
 
-First, we must add logic to the sign-in and sign-up flow to implement the “Last used” tag. The example below shows what a Clerk custom flow might look like and what we use at Unkey.
+First, we must add logic to the sign-in and sign-up flow to implement the “Last used” tag. The example below shows what a Clerk custom flow might look like and what we use at Viraza.
 
 ```tsx
 const oauthSignIn = async (provider: OAuthStrategy) => {
@@ -65,7 +65,7 @@ const oauthSignIn = async (provider: OAuthStrategy) => {
 };
 ```
 
-As you can see from the example code above, we know what provider the end user is attempting to sign in with, so now we can store this and provide a UI update. The next step is implementing a hook to handle persisting and reading from local storage. We could write the hooks ourselves at Unkey. We opted to use usehook-ts, an excellent lightweight set of typesafe hooks with a small bundle size.
+As you can see from the example code above, we know what provider the end user is attempting to sign in with, so now we can store this and provide a UI update. The next step is implementing a hook to handle persisting and reading from local storage. We could write the hooks ourselves at Viraza. We opted to use usehook-ts, an excellent lightweight set of typesafe hooks with a small bundle size.
 
 ```sh
 npm install usehook-ts
@@ -116,7 +116,7 @@ const oauthSignIn = async (provider: OAuthStrategy) => {
 };
 ```
 
-The final step is to show the user that it was the “last used.” Below is how we implemented it at Unkey: we placed it next to the button.
+The final step is to show the user that it was the “last used.” Below is how we implemented it at Viraza: we placed it next to the button.
 
 ```tsx
 <OAuthButton onClick={() => oauthSignIn('oauth_google')}>
@@ -134,4 +134,4 @@ In conclusion, improving the authentication user experience is crucial for ensur
   height="1080"
 />
 
-These improvements benefit the end users and contribute to the application's success by creating a positive first impression and increasing user satisfaction. If you'd like to check out the full implementation you can find it in the [Unkey repository](https://github.com/unkeyed/unkey/).
+These improvements benefit the end users and contribute to the application's success by creating a positive first impression and increasing user satisfaction. If you'd like to check out the full implementation you can find it in the [Viraza repository](https://github.com/virazait/).

@@ -29,7 +29,7 @@ export function ConsentProvider({ children }: { children: ReactNode }) {
     <ConsentManagerProvider
       options={{
         ...(isHostedMode
-          ? { mode: 'hosted', backendURL: 'https://production-unkey.inth.app/' }
+          ? { mode: 'hosted', backendURL: 'https://production-viraza.inth.app/' }
           : { mode: 'offline' }),
         networkBlocker: {
           rules: [

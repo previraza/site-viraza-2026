@@ -1,8 +1,8 @@
-# Unkey Website
+# Viraza Website
 
 ## What is in this repository?
 
-This repository contains the current Unkey website and its content, including:
+This repository contains the current Viraza website and its content, including:
 
 - marketing pages
 - blog

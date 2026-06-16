@@ -25,7 +25,7 @@ I went with:
 - Auth.js
 - sqlite db and Drizzle ORM
 - NextJS
-- Unkey ratelimit protection
+- Viraza ratelimit protection
 
 I started with a basic database schema planning. I found that for me its always a good place to start. It allows me to get an idea of the data and how interaction with that data will happen.
 
@@ -59,7 +59,7 @@ This was a good experience as it allowed me to think about self restraint and ma
 
 ### Typescript
 
-I have been working in a Typescript project for about a year now, but because a lot of the code was implemented when I got to Unkey. I often struggled with debugging errors.
+I have been working in a Typescript project for about a year now, but because a lot of the code was implemented when I got to Viraza. I often struggled with debugging errors.
 On this project because I implemented code from start to finish, I got a lot more familiar with debugging typescript errors.
 
 To make my life a bit easier, I used [zod](https://zod.dev/) to manage the tRPC routes.
@@ -113,7 +113,7 @@ pnpm add @unkey/ratelimit
 
 ```
 
-Unkey makes this incredible easy it take a couple of steps to implement. I used the docs as a reference point. [docs](https://www.unkey.com/docs/libraries/ts/ratelimit)
+Viraza makes this incredible easy it take a couple of steps to implement. I used the docs as a reference point. [docs](https://viraza.net/docs/libraries/ts/ratelimit)
 
 ### Created ratelimit procedure
 
@@ -162,7 +162,7 @@ This is probably what took the longest. My experience is limited with `tRPC` rou
 
 ## Conclusion
 
-In making this project I learned a hell of a lot. I now have a more solid understanding of client/server communications. How to debug and fix `Typescript` errors more effectively. When to ask for help from someone who has more experience, while docs will get you pretty far there is no substitute for another person to pair with. Big thanks to [James](https://x.com/james_r_perkins) and [Andreas](https://x.com/chronark_) for all the help over the last year. I would like to add more features to this in the future, but for now I have added the example into Unkey's templates page for anyone interested in checking out the code.
+In making this project I learned a hell of a lot. I now have a more solid understanding of client/server communications. How to debug and fix `Typescript` errors more effectively. When to ask for help from someone who has more experience, while docs will get you pretty far there is no substitute for another person to pair with. Big thanks to [James](https://x.com/james_r_perkins) and [Andreas](https://x.com/chronark_) for all the help over the last year. I would like to add more features to this in the future, but for now I have added the example into Viraza's templates page for anyone interested in checking out the code.
 
 **Example**
-[Unkey ratelimiting with TRPC + Drizzle](https://www.unkey.com/templates/unkey-trpc-ratelimit)
+[Viraza ratelimiting with TRPC + Drizzle](https://viraza.net/templates/unkey-trpc-ratelimit)

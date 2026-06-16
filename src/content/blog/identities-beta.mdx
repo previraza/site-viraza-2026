@@ -130,13 +130,13 @@ When you create a key, you can now assign it to an identity by providing the `id
 
 ## Verifying keys
 
-If your identity is configured with metadata and/or ratelimits, you can now [verify a key](https://www.unkey.com/docs/api-reference/v2/keys/verify-api-key).
+If your identity is configured with metadata and/or ratelimits, you can now [verify a key](https://viraza.net/docs/api-reference/v2/keys/verify-api-key).
 
 To use the configured ratelimits, you'll need to specify which one you want to use in the `ratelimits` parameter. You can optionally specify a `cost` for each ratelimit, which will be deducted from the ratelimit when the request is verified.
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.verifyKey \
+  --url https://api.viraza.net/v1/keys.verifyKey \
   --header 'Content-Type: application/json' \
   --data '{
   "apiId": "api_1234",

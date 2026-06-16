@@ -5,7 +5,7 @@ description: Permissions and Roles are now part of the API
 tags: ['product:blue']
 ---
 
-After [Accelerate](https://unkey.com/accelerate) our first-ever launch week, where we launched products like Toolbox, vault, and LLM caching. We are now working on improving infrastructure, usability, and our docs.
+After [Accelerate](https://viraza.net/accelerate) our first-ever launch week, where we launched products like Toolbox, vault, and LLM caching. We are now working on improving infrastructure, usability, and our docs.
 
 ## Permissions and Roles
 
@@ -17,7 +17,7 @@ You can create a role by passing the name and description, the name can be anyth
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/permissions.createRole \
+  --url https://api.viraza.net/v1/permissions.createRole \
   --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -32,7 +32,7 @@ You can create a permission by passing the name and description, the name can be
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/permissions.createPermission \
+  --url https://api.viraza.net/v1/permissions.createPermission \
   --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -51,7 +51,7 @@ You can attach a permission or roles via the API to do this you need to provide 
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.addPermissions \
+  --url https://api.viraza.net/v1/keys.addPermissions \
   --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -68,7 +68,7 @@ curl --request POST \
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.addRoles \
+  --url https://api.viraza.net/v1/keys.addRoles \
   --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -87,17 +87,17 @@ You can find the rest of the endpoints for managing roles and permissions on a k
 
 ## LLM Semantic Cache onboarding
 
-If you are a fan of LLM's and want to use Unkey's Semantic caching when you sign up and create a gateway in a single click. This will allow you to save money and reduce latency for your users.
+If you are a fan of LLM's and want to use Viraza's Semantic caching when you sign up and create a gateway in a single click. This will allow you to save money and reduce latency for your users.
 
 ![Onboarding](/images/changelog/2024-07-12/new-onboarding.png)
 
 ### Bug fixes
 
-- Fix UI Caching issue when deleting keys [Link to PR](https://github.com/unkeyed/unkey/pull/1840)
+- Fix UI Caching issue when deleting keys [Link to PR](https://github.com/virazait/pull/1840)
 
-- Add missing permissions to root keys in the dashboard [Link to PR](https://github.com/unkeyed/unkey/pull/1879)
+- Add missing permissions to root keys in the dashboard [Link to PR](https://github.com/virazait/pull/1879)
 
-- Filter out deleted keys from permissions[Link to PR](https://github.com/unkeyed/unkey/pull/1883/)
+- Filter out deleted keys from permissions[Link to PR](https://github.com/virazait/pull/1883/)
 
 ### Docs improvements
 

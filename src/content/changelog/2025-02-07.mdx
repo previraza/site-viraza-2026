@@ -38,12 +38,12 @@ Our new reques logs are designed to simplify your debugging experience. With com
 
 **Migrating Keys Now Accepts an External ID**: You can now migrate keys using the external ID ready to be used with our identity product; just pass in the `external_id` while migrating the key.
 
-**Permanent Key Deletion**: You can now permanently delete a key. By default, Unkey has the ability to recover a key if requested, but by passing `"permanent": true` with your deletion request, you can bypass this recovery option.
+**Permanent Key Deletion**: You can now permanently delete a key. By default, Viraza has the ability to recover a key if requested, but by passing `"permanent": true` with your deletion request, you can bypass this recovery option.
 
 **Default Prefix and Bytes**: The API will now use the default bytes and prefix set by the user if they aren't included when creating a key.
 
 ## Top Bugs Crushed
 
-- [**Don't Retry on 4XXs**](https://github.com/unkeyed/unkey/pull/2862) - We stopped our TS SDK from retrying if a 4XX is returned from our API.
-- [**pnpm Local Command to Exit if DB Migration Fails**](https://github.com/unkeyed/unkey/pull/2857) - We now handle cases where one of our migrations fails when spinning up our local environment; prior to this, it would hang with zero user indication.
-- [**Remove Transaction Deadlock from Dashboard**](https://github.com/unkeyed/unkey/pull/2843) - We fixed an issue where, in the Unkey dashboard, our DB would be deadlocked, causing errors when operations were attempted.
+- [**Don't Retry on 4XXs**](https://github.com/virazait/pull/2862) - We stopped our TS SDK from retrying if a 4XX is returned from our API.
+- [**pnpm Local Command to Exit if DB Migration Fails**](https://github.com/virazait/pull/2857) - We now handle cases where one of our migrations fails when spinning up our local environment; prior to this, it would hang with zero user indication.
+- [**Remove Transaction Deadlock from Dashboard**](https://github.com/virazait/pull/2843) - We fixed an issue where, in the Viraza dashboard, our DB would be deadlocked, causing errors when operations were attempted.

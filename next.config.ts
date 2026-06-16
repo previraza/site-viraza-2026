@@ -116,7 +116,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/github',
-        destination: 'https://github.com/unkeyed/unkey',
+        destination: 'https://github.com/virazait',
         permanent: false,
       },
       {

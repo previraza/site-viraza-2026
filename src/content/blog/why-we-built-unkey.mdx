@@ -1,23 +1,23 @@
 ---
 date: 2023-07-04
-title: Why we built Unkey
+title: Why we built Viraza
 image: '/images/blog-images/covers/why-unkey.jpg'
-description: Why we built Unkey, the open source API management tool and what features we have.
+description: Why we built Viraza, the open source API management tool and what features we have.
 author: james
 tags: ['product', 'engineering']
 ---
 
-## What is Unkey?
+## What is Viraza?
 
-Unkey provides a way for you to create, manage and revoke API Keys that belong to your API. It's a simple concept, but one that we think is important. We built Unkey to layer it into your API so that you can issue keys, manage them and revoke them as needed. This means we need a simple and great DX and fast response times.
+Viraza provides a way for you to create, manage and revoke API Keys that belong to your API. It's a simple concept, but one that we think is important. We built Viraza to layer it into your API so that you can issue keys, manage them and revoke them as needed. This means we need a simple and great DX and fast response times.
 
 ## Why did we build it?
 
-We built Unkey because we were tired of copying and pasting the same API management into a new codebase. Similar to authentication, you can do it yourself, but having a dedicated company that is working on improvements, and worrying about security and latency means you can focus on the business and core features.
+We built Viraza because we were tired of copying and pasting the same API management into a new codebase. Similar to authentication, you can do it yourself, but having a dedicated company that is working on improvements, and worrying about security and latency means you can focus on the business and core features.
 
 ## What are the current features?
 
-Unkey provides the following features out of the box:
+Viraza provides the following features out of the box:
 
 - An admin dashboard to manage your APIs, issue keys, revoke keys and see usage stats.
 
@@ -44,19 +44,19 @@ Our admin dashboard gives you access to several features in a simple-to-use inte
 
 ### Simple API with SDKs
 
-We wanted the DX for Unkey to be as simple as possible. We've built a simple API that you can use to create, manage and revoke keys. We wanted to make sure the API was easy to integrate and didn't take engineering time away.
+We wanted the DX for Viraza to be as simple as possible. We've built a simple API that you can use to create, manage and revoke keys. We wanted to make sure the API was easy to integrate and didn't take engineering time away.
 
 No API is great without SDKs so we built a typescript one and our community also built an Elixir and Python SDK.
 
 ### Short-lived keys
 
-When we started Unkey we wanted the ability to issue a short-lived key but we didn't want to restrict the period. We understand that each use case is different so you can pass us an expiration or select it in the UI.
+When we started Viraza we wanted the ability to issue a short-lived key but we didn't want to restrict the period. We understand that each use case is different so you can pass us an expiration or select it in the UI.
 
 Once the key expires, we revoke the key and the user can no longer access your content. This is great for audit teams, trials, or payment systems that give you access for some time.
 
 ### Rate limited keys
 
-Rate limiting is essential to all businesses that have an API. Unkey gives you the ability to set each key to a different rate limit. We handle the rate limiting for you, it's as simple as telling us the total amount of burstable requests, the refill rate, and how quickly they should be refilled.
+Rate limiting is essential to all businesses that have an API. Viraza gives you the ability to set each key to a different rate limit. We handle the rate limiting for you, it's as simple as telling us the total amount of burstable requests, the refill rate, and how quickly they should be refilled.
 
 Once you have the key with the limits, with each request we return the amount the request limit, how many remaining, and the reset time. Once a user hits the rate limit we will return `json "valid": false` alongside a code `RATE_LIMITED` if the rate limit has been hit, so you know that this user shouldn't be able to access your endpoints.
 
@@ -75,8 +75,8 @@ This allows you to pull less data from other systems in your infrastructure to m
 
 ## Built with speed in mind
 
-Unkey was built to have minimal impact on your API, we have our database in the United States but replicate this into other regions so that we can serve your requests as fast as possible. We have our API distributed across the world so that requests will go to the closest region to your user, process at the closet database, and then return the response. Unkey also automatically caches the key on creation, so that the first request is as fast as the second or third request.
+Viraza was built to have minimal impact on your API, we have our database in the United States but replicate this into other regions so that we can serve your requests as fast as possible. We have our API distributed across the world so that requests will go to the closest region to your user, process at the closet database, and then return the response. Viraza also automatically caches the key on creation, so that the first request is as fast as the second or third request.
 
 On average our requests add less than 40ms to your requests, below are some of the latest requests we are monitoring through [Planetfall](https://planetfall.io)
 
-![Unkey latency](/images/blog-images/unkey-latency.png)
+![Viraza latency](/images/blog-images/unkey-latency.png)

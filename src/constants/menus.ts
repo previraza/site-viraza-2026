@@ -37,19 +37,19 @@ export const MENUS = {
       ],
     },
     { label: 'Pricing', href: '/pricing' },
-    { label: 'Docs', href: 'https://unkey.com/docs/introduction' },
+          { label: 'Docs', href: 'https://viraza.net/docs' },
   ],
   footer: {
-    description: 'Build better APIs faster',
-    copyright: '© 2026 Unkey Inc. All rights reserved.',
+    description: 'Des solutions IT innovantes pour votre entreprise',
+    copyright: '© 2026 Viraza Inc. All rights reserved.',
     main: [
       {
         title: 'Company',
         items: [
           { label: 'About', href: '/about' },
           { label: 'Source Code', href: GITHUB_URL },
-          { label: 'Status Page', href: 'https://status.unkey.com' },
-          { label: 'Roadmap', href: 'https://feedback.unkey.com/roadmap' },
+          { label: 'Status Page', href: 'https://status.viraza.net' },
+          { label: 'Roadmap', href: 'https://feedback.viraza.net/roadmap' },
         ],
       },
       {
@@ -57,17 +57,17 @@ export const MENUS = {
         items: [
           { label: 'Blog', href: '/blog' },
           { label: 'Changelog', href: '/changelog' },
-          { label: 'Docs', href: 'https://unkey.com/docs/introduction' },
+    { label: 'Docs', href: 'https://viraza.net/docs' },
           { label: 'Glossary', href: '/glossary' },
-          { label: 'Feature Request', href: 'https://feedback.unkey.com/' },
+          { label: 'Feature Request', href: 'https://feedback.viraza.net/' },
           // { label: 'Case Studies', href: '/case-studies' },
         ],
       },
       {
         title: 'Connect',
         items: [
-          { label: 'X (Twitter)', href: 'https://x.com/unkeydev' },
-          { label: 'Discord', href: 'https://unkey.com/discord' },
+          { label: 'X (Twitter)', href: 'https://x.com/viraza' },
+          { label: 'Discord', href: 'https://viraza.net/discord' },
           { label: 'Book a Call', href: BOOK_A_CALL_URL },
         ],
       },
@@ -81,7 +81,7 @@ export const MENUS = {
     ] satisfies IFooterMenuSection[],
     social: [
       {
-        href: 'https://x.com/unkeydev',
+        href: 'https://x.com/viraza',
         label: 'Follow us on X',
         icon: 'twitter',
       },
@@ -91,7 +91,7 @@ export const MENUS = {
         icon: 'github',
       },
       {
-        href: 'https://unkey.com/discord',
+        href: 'https://viraza.net/discord',
         label: 'Join our Discord',
         icon: 'discord',
       },

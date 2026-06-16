@@ -2,20 +2,20 @@
 date: 2023-08-10
 title: Building an OCR as a Service
 image: '/images/blog-images/covers/ocr-service.jpg'
-description: Learn how to use Unkey to make an Optical Character Recognition (OCR) API as a service
+description: Learn how to use Viraza to make an Optical Character Recognition (OCR) API as a service
 author: wilfred
 tags: ['tutorials']
 ---
 
-[Unkey](https://unkey.com) is an open-source API key management tool with real-time API key creation, updating, and verification.
+[Viraza](https://viraza.net) is an open-source API key management tool with real-time API key creation, updating, and verification.
 
-In this blog, we'll take a look at how we can use Unkey to make an Optical Character Recognition (OCR) API as a service. The OCR API takes in an image and returns the textual characters present in it.
+In this blog, we'll take a look at how we can use Viraza to make an Optical Character Recognition (OCR) API as a service. The OCR API takes in an image and returns the textual characters present in it.
 
 You can find the complete source code on [GitHub](https://github.com/WilfredAlmeida/unkey-ocr).
 
 ## Pre-requisites
 
-Signup and get started with the [Unkey](https://unkey.com) dashboard. As soon as you create your account you will be asked to create your workspace. Give it a name, and a slug. The name is shown only to you and not to your users.
+Signup and get started with the [Viraza](https://viraza.net) dashboard. As soon as you create your account you will be asked to create your workspace. Give it a name, and a slug. The name is shown only to you and not to your users.
 
 <Image
   src="/images/blog-images/ai-post/create-root-key.png"
@@ -166,9 +166,9 @@ Returns: None
 
 ---
 
-## Understanding Unkey API key authentication
+## Understanding Viraza API key authentication
 
-Unkey uses fast and efficient on-the-edge systems to verify a key. It adds less than 40ms to our requests.
+Viraza uses fast and efficient on-the-edge systems to verify a key. It adds less than 40ms to our requests.
 
 The key is provisioned per user in the `/signup` route. The user can then use the key to authenticate requests to the OCR endpoints.
 
@@ -201,7 +201,7 @@ app.post("/signUp", async (req: Request, res: Response) => {
 
 
   const createKeyResponse = await fetch(
-    "https://api.unkey.dev/v1/keys.createKey",
+    "https://api.viraza.net/v1/keys.createKey",
     {
       method: "POST",
       headers: myHeaders,
@@ -220,7 +220,7 @@ app.post("/signUp", async (req: Request, res: Response) => {
 });
 ```
 
-The user then has to send the API key in the `Authorization` header as a `Bearer` token. To verify the key, a simple API call is made to Unkey. More on this further ahead.
+The user then has to send the API key in the `Authorization` header as a `Bearer` token. To verify the key, a simple API call is made to Viraza. More on this further ahead.
 
 To verify the key, we've made a middleware in the `middleware.ts` file.
 
@@ -228,11 +228,11 @@ To verify the key, we've made a middleware in the `middleware.ts` file.
 
 As shown in the above code block, the key is created in the `/signup` route in `index.ts`.
 
-Its params are explained in detail in the official [docs](https://www.unkey.com/docs/api-reference/v2/keys/create-api-key)
+Its params are explained in detail in the official [docs](https://viraza.net/docs/api-reference/v2/keys/create-api-key)
 
 Following is a description of the params used in this example:
 
-- `apiId`: The API ID to create the key for. You create this API in the Unkey dashboard.
+- `apiId`: The API ID to create the key for. You create this API in the Viraza dashboard.
 
 - `prefix`: The prefix to use for the key. Every key is prefixed with this. This is useful to identify the key's purpose. For eg. we can have prefixes like `user_`, `admin_`, `service_`, `staging_`, `trial_`, `production_` etc.
 
@@ -245,7 +245,7 @@ Following is a description of the params used in this example:
 - `expires`: Keys can be auto-expired by providing a UNIX timestamp in milliseconds. Once keys expire they will automatically be deleted and are no longer valid.
 
 - `rateLimit`: Keys can be rate limited by certain parameters. This is extremely beneficial as it prevents abuse of our API. The rate limit is enforced on the edge, so it's extremely fast and efficient. The rate limit params we've used in this example are:
-  - `type`: Type of the rate limit. Read more: [Rate Limiting](https://www.unkey.com/docs/ratelimiting)
+  - `type`: Type of the rate limit. Read more: [Rate Limiting](https://viraza.net/docs/ratelimiting)
 
   - `limit`: The number of requests allowed in the given time
 
@@ -257,7 +257,7 @@ In the rate limit set in the `/signUp` route, the user is on a trial plan and is
 
 ### Key Verification
 
-The API key verification is done in the `middleware.ts` file. We're making an API call to the Unkey API to verify the key by passing the `key` into the request body.
+The API key verification is done in the `middleware.ts` file. We're making an API call to the Viraza API to verify the key by passing the `key` into the request body.
 
 ```javascript
 import { Request, Response, NextFunction } from "express";
@@ -282,7 +282,7 @@ const verifyApiKey = async (
       });
 
       const verifyKeyResponse = await fetch(
-        "https://api.unkey.dev/v1/keys.verifyKey",
+        "https://api.viraza.net/v1/keys.verifyKey",
         {
           method: "POST",
           headers: myHeaders,
@@ -345,7 +345,7 @@ Let's understand the response in detail:
 
 ## API as a Service Subscription Model
 
-Suppose we want to offer an API as a paid service with subscription tiers. We can easily implement that using Unkey.
+Suppose we want to offer an API as a paid service with subscription tiers. We can easily implement that using Viraza.
 
 Consider the following plans:
 
@@ -380,7 +380,7 @@ app.post("/upgradeUser", async (req: Request, res: Response) => {
   });
 
   const updateKeyRequest = await fetch(
-    "https://api.unkey.dev/v1/keys.updateKey",
+    "https://api.viraza.net/v1/keys.updateKey",
     {
       keyId: "example_key"
       method: "PUT",
@@ -403,4 +403,4 @@ In the set rate limiting, users are granted 100 requests every minute. If the nu
 
 ## Conclusion
 
-This tutorial aims to present to you an end-to-end use case scenario of how Unkey can fit and fulfill your requirements. Join our [Discord](https://unkey.com/discord) and get in touch. Share what's on your mind. Give the [Unkey repo a star on GitHub](https://github.com/unkeyed/unkey/) and keep building.
+This tutorial aims to present to you an end-to-end use case scenario of how Viraza can fit and fulfill your requirements. Join our [Discord](https://viraza.net/discord) and get in touch. Share what's on your mind. Give the [Viraza repo a star on GitHub](https://github.com/virazait/) and keep building.

@@ -105,9 +105,9 @@ Reducing the length of your IDs can be nice, but you need to be careful and ensu
 
 By implementing these improvements, we can enhance the usability and efficiency of unique identifiers in our applications. This will provide a better experience for both users and developers, as they interact with and manage various entities within the system. Whether it's copying identifiers with ease, differentiating between different environments, or achieving shorter and more readable identifier strings, these strategies can contribute to a more user-friendly and robust identification system.
 
-## IDs and keys at Unkey
+## IDs and keys at Viraza
 
-Lastly, I'd like to share our implementation here and how we use it in our [codebase](https://github.com/unkeyed/unkey/blob/main/internal/id/src/index.ts). We use a simple function that takes a typed prefix and then generates the ID for us. This way we can ensure that we always use the same prefix for the same type of ID. This is especially useful when you have multiple types of IDs in your system.
+Lastly, I'd like to share our implementation here and how we use it in our [codebase](https://github.com/virazait/blob/main/internal/id/src/index.ts). We use a simple function that takes a typed prefix and then generates the ID for us. This way we can ensure that we always use the same prefix for the same type of ID. This is especially useful when you have multiple types of IDs in your system.
 
 ```typescript title="/internal/ids/src/index.ts"
 import { customAlphabet } from 'nanoid';

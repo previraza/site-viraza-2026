@@ -4,27 +4,27 @@ import { ArrowRightLeft, CircleDot, Flame, MessageSquare } from 'lucide-react';
 import type { IProgramBenefit } from '@/components/pages/program/program-section';
 
 export const ycContentData = {
-  eyebrow: 'Y Combinator Program',
+  eyebrow: 'Programme Partenaires',
   title: createElement(
     Fragment,
     null,
-    createElement('mark', null, '$1,000 in credits'),
-    '\nevery month for current YC batch',
+    createElement('mark', null, '-30% sur nos solutions'),
+    '\npour les institutions partenaires',
   ),
   description:
-    '$1,000 in credits every month for the current YC batch. Everyone else gets 50% off their bill. Eligibility expires after raising $5 million.',
+    "30% de réduction sur l'ensemble de nos solutions pour les établissements scolaires et universitaires partenaires. Accompagnement prioritaire et déploiement accéléré.",
   benefits: [
     {
       icon: CircleDot,
-      title: '$1,000 in monthly credits',
+      title: "-30% pour les institutions",
       description:
-        "No catch. Get $1,000 in credits every month while you build and ship — we're happy to cover the bill.",
+        "Les établissements d'enseignement partenaires bénéficient de 30% de réduction sur toutes nos solutions éducatives.",
     },
     {
       icon: MessageSquare,
-      title: 'Priority support',
+      title: 'Accompagnement dédié',
       description:
-        "We know startup life is about moving fast and we won't block you. We give you a dedicated Slack channel to ask questions and get help.",
+        "Un chef de projet dédié vous accompagne de l'audit initial au déploiement pour garantir le succès de votre projet.",
     },
     {
       icon: Flame,

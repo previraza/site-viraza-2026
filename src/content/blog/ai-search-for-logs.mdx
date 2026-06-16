@@ -26,7 +26,7 @@ Example -> status=is:200,is:400
            path=startsWith:foo,endsWith:bar
 ```
 
-This pattern allows for incredible flexibility - you can chain multiple conditions while maintaining readability. To handle these parameters in our Unkey dashboard, we implemented a custom parser for [nuqs]("https://nuqs.47ng.com/"):
+This pattern allows for incredible flexibility - you can chain multiple conditions while maintaining readability. To handle these parameters in our Viraza dashboard, we implemented a custom parser for [nuqs]("https://nuqs.47ng.com/"):
 
 ```typescript
 export const parseAsFilterValueArray: Parser<FilterUrlValue[]> = {

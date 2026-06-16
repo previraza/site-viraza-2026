@@ -1,25 +1,24 @@
-export const APP_URL = 'https://app.unkey.com/';
-export const SIGN_UP_URL = 'https://app.unkey.com/auth/sign-up';
-export const GITHUB_URL = 'https://github.com/unkeyed/unkey';
-export const BOOK_A_CALL_URL =
-  'https://unkey.cal.com/unkey/user-interview?utm_source=banner&utm_campaign=oss&slug=unkey&type=user-interview&orgRedirection=true';
-export const ENTERPRISE_CONTACT_URL = 'mailto:support@unkey.com?subject=Unkey%20Enterprise%20Quote';
+export const APP_URL = 'https://viraza.net/';
+export const SIGN_UP_URL = 'https://viraza.net/contact';
+export const GITHUB_URL = 'https://github.com/virazait';
+export const BOOK_A_CALL_URL = 'https://viraza.net/contact';
+export const ENTERPRISE_CONTACT_URL = 'mailto:info@viraza.net?subject=Contact%20Viraza';
 
 const config = {
-  projectName: 'unkey',
+  projectName: 'Viraza',
   logo: {
     light: '/logo-light.svg',
     dark: '/logo-dark.svg',
   },
-  logoAlt: 'unkey',
+  logoAlt: 'Viraza',
   logoLink: '/',
   metaThemeColors: {
     light: '#040406',
     dark: '#040406',
   },
   defaultSocialImage: '/social-previews/main.jpg',
-  githubOrg: 'unkeyed',
-  githubRepo: 'unkey',
+  githubOrg: 'virazait',
+  githubRepo: 'viraza',
   blog: {
     postsPerPage: 20,
     contentWidth: 704,

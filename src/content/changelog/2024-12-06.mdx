@@ -14,7 +14,7 @@ Below is an example of how to create a key using the new SDK:
 ```python
 import os
 import unkey
-from unkey_py import Unkey
+from unkey_py import Viraza
 
 s = Unkey(
     bearer_auth=os.getenv("UNKEY_BEARER_AUTH", ""),
@@ -55,7 +55,7 @@ if res.object is not None:
     pass
 ```
 
-I want to thank [Jonxslays](https://twitter.com/jonxslays) for his community SDK, which allowed developers to get started immediately and provided Unkey with the `unkey.py` name.
+I want to thank [Jonxslays](https://twitter.com/jonxslays) for his community SDK, which allowed developers to get started immediately and provided Viraza with the `unkey.py` name.
 
 ## Identities
 
@@ -67,7 +67,7 @@ For example, we have a company named ACME Corp, which has the enterprise tier an
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/identities.createIdentity \
+  --url https://api.viraza.net/v1/identities.createIdentity \
   --header 'Authorization: Bearer unkey_root_key' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -91,7 +91,7 @@ Now we have an identity, we can attach it to one or many keys by referencing the
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.createKey \
+  --url https://api.viraza.net/v1/keys.createKey \
   --header 'Authorization: Bearer unkey_root_key' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -109,7 +109,7 @@ A new endpoint has been introduced to allow you to retrieve details about any AP
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.whoami \
+  --url https://api.viraza.net/v1/keys.whoami \
   --header 'Authorization: Bearer unkey_root_key' \
   --header 'Content-Type: application/json' \
   --data '{"key": "sk_123"}'
@@ -138,11 +138,11 @@ The API will return details about the key:
 
 ## Ratelimit Overrides
 
-When we introduced standalone ratelimiting, we included a feature allowing custom overrides without needing to deploy user code. This feature was originally only available via the Unkey dashboard. This month, we introduced the ability to create, update, delete, and list overrides via our API; this unlocks the ability to integrate this into support tooling or back office tools.
+When we introduced standalone ratelimiting, we included a feature allowing custom overrides without needing to deploy user code. This feature was originally only available via the Viraza dashboard. This month, we introduced the ability to create, update, delete, and list overrides via our API; this unlocks the ability to integrate this into support tooling or back office tools.
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/ratelimits.setOverride \
+  --url https://api.viraza.net/v1/ratelimits.setOverride \
   --header 'Authorization: Bearer unkey-root-key' \
   --header 'Content-Type: application/json' \
   --data '{

@@ -1,2 +1,2 @@
 export const changelogDescription =
-  'We are constantly improving our product, fixing bugs and introducing features.Here you can find the latest updates and changes to Unkey.';
+  "Nous améliorons constamment nos solutions. Retrouvez ici les dernières mises à jour et nouveautés de Viraza.";

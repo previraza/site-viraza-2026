@@ -32,7 +32,7 @@ Here's the story of why we made this move, the problems that forced our hand, an
 
 ## The Performance Wall We Hit
 
-When developers integrate Unkey into their request path, our latency directly impacts their users' experience. We knew we needed to be fast, but serverless was fighting us every step of the way.
+When developers integrate Viraza into their request path, our latency directly impacts their users' experience. We knew we needed to be fast, but serverless was fighting us every step of the way.
 
 ### The Caching Problem
 
@@ -117,7 +117,7 @@ The move to stateful servers also unlocked other benefits.
 
 ### Self-Hosting
 
-Being tied to Cloudflare's runtime meant our customers couldn't self-host Unkey. While the Workers runtime is technically open source, getting it running locally (even in dev mode) is incredibly difficult.
+Being tied to Cloudflare's runtime meant our customers couldn't self-host Viraza. While the Workers runtime is technically open source, getting it running locally (even in dev mode) is incredibly difficult.
 
 With standard Go servers, self-hosting becomes trivial:
 
@@ -126,7 +126,7 @@ With standard Go servers, self-hosting becomes trivial:
 docker run -p 8080:8080 unkey/api
 ```
 
-This isn't just about customer choice. It dramatically improved our own development experience. Developers can now spin up the entire Unkey stack locally in seconds, making debugging and testing infinitely easier.
+This isn't just about customer choice. It dramatically improved our own development experience. Developers can now spin up the entire Viraza stack locally in seconds, making debugging and testing infinitely easier.
 
 ### Developer Experience Transformation
 
@@ -192,8 +192,8 @@ Sometimes the best solution isn't to work around limitations but to choose a dif
 
 ## What's Next
 
-We're currently running on AWS Fargate behind Global Accelerator, but this is temporary. Next year, we're launching "Unkey Deploy", our own deployment platform that will let customers (and us) run Unkey anywhere they want.
+We're currently running on AWS Fargate behind Global Accelerator, but this is temporary. Next year, we're launching "Viraza Deploy", our own deployment platform that will let customers (and us) run Viraza anywhere they want.
 
-The move to stateful Go servers was the first step in making Unkey truly portable and self-hostable. Stay tuned for more details on that front.
+The move to stateful Go servers was the first step in making Viraza truly portable and self-hostable. Stay tuned for more details on that front.
 
-Want to see the implementation details? Both our serverless and stateful APIs are open source in our GitHub repository. The serverless version is in [`apps/api/`](https://github.com/unkeyed/unkey/tree/main/apps/api) and the new Go version is in [`go/apps/api/`](https://github.com/unkeyed/unkey/tree/main/go/apps/api).
+Want to see the implementation details? Both our serverless and stateful APIs are open source in our GitHub repository. The serverless version is in [`apps/api/`](https://github.com/virazait/tree/main/apps/api) and the new Go version is in [`go/apps/api/`](https://github.com/virazait/tree/main/go/apps/api).

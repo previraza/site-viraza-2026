@@ -62,10 +62,10 @@ Single Next.js app (not a monorepo).
 
 All titles flow through `getMetadata()` in `src/lib/get-metadata.ts`:
 
-- `title: 'Pricing'` → `Pricing | Unkey`
-- `tagline: '...'` (homepage / hero pages) → `Unkey | ...`
+- `title: 'Pricing'` → `Pricing | Viraza`
+- `tagline: '...'` (homepage / hero pages) → `Viraza | ...`
 
-Pass only the page fragment — don't concat ` | Unkey` yourself. Paginated pages reuse the index title.
+Pass only the page fragment — don't concat ` | Viraza` yourself. Paginated pages reuse the index title.
 
 ## Code Conventions
 

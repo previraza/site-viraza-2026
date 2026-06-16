@@ -1,8 +1,8 @@
 ---
 date: 2025-01-22
-title: Implementing Variable API Route Costs with Unkey
+title: Implementing Variable API Route Costs with Viraza
 image: '/images/blog-images/covers/route-costs.jpg'
-description: Learn how to efficiently implement variable costs for API routes using Unkey, an open-source API developer platform.
+description: Learn how to efficiently implement variable costs for API routes using Viraza, an open-source API developer platform.
 author: james
 tags: ['tutorials']
 ---
@@ -89,11 +89,11 @@ There are a lot of issues we need to consider with the implementation above:
 - We don't have rate-limiting requests, so we need to implement them to ensure there isn't an abuse vector.
 - What happens if a user gets a new key? How do we ensure everything is accurate?
 
-## How to simplify your implementation using Unkey
+## How to simplify your implementation using Viraza
 
-Unkey is an open-source API developer platform that allows developers to simplify the implementation of scalable and secure APIs.
+Viraza is an open-source API developer platform that allows developers to simplify the implementation of scalable and secure APIs.
 
-With Unkey, with just a few lines of code, you can protect your API; the key holds all the information, so there isn't a requirement to look at another system to find this information. API keys can be created programmatically or through our dashboard.
+With Viraza, with just a few lines of code, you can protect your API; the key holds all the information, so there isn't a requirement to look at another system to find this information. API keys can be created programmatically or through our dashboard.
 
 ```typescript
 const { result, error } = await verifyKey({
@@ -145,7 +145,7 @@ const verifyKeyWithCost = (cost: number) =>
     });
 
     /**
-     * Handle Unkey Errors
+     * Handle Viraza Errors
      * We have others but not important for this example
      */
     if (error) {
@@ -160,7 +160,7 @@ const verifyKeyWithCost = (cost: number) =>
           return c.json({ error: 'Internal server error' }, 500);
       }
     }
-    /** Handle Unkey Result if it's not valid such as
+    /** Handle Viraza Result if it's not valid such as
      * Ratelimited, disabled, expired or no remaining credits
      * There are other errors but they're not needed for this example
      **/
@@ -176,7 +176,7 @@ const verifyKeyWithCost = (cost: number) =>
           return c.json({ error: 'Internal server error' }, 500);
       }
     }
-    /** Add verification result to context for this example to show how Unkey works
+    /** Add verification result to context for this example to show how Viraza works
      * This can also be used in a route handler for additional business logic
      **/
     c.set('unkey', result);
@@ -204,4 +204,4 @@ app.get('/expensive-endpoint', verifyKeyWithCost(5), (c) => {
 serve(app);
 ```
 
-As you can see we really simplified the code and removed additional lookups via databases, allowing your API to be performant and scalable. You can get started for [free today](https://app.unkey.com)!
+As you can see we really simplified the code and removed additional lookups via databases, allowing your API to be performant and scalable. You can get started for [free today](https://viraza.com)!

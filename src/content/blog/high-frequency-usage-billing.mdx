@@ -14,7 +14,7 @@ As long as your customer is too small to generate revenue, they don't want to pa
 Generous free tiers are a good solution to attract users, but even after they upgrade, you shouldn't send them an enormous bill for resources they're not even using. Pricing that scales with usage is preferrable for many, but not all, products.
 
 Some companies have different billing tiers, where you'd pay for example: $10 for 10k, $20 for 30k, $50 for 100k. The issue with that is paying the next higher tier just because you have exceeded the previous tier by a small margin, ie: paying $50 for 31k.
-This system is very easy to implement, but at Unkey we do prorated usaged based billing, which means you pay for your exact usage, not whatever billing tier your usage fits in.
+This system is very easy to implement, but at Viraza we do prorated usaged based billing, which means you pay for your exact usage, not whatever billing tier your usage fits in.
 
 ## Challenges
 
@@ -48,7 +48,7 @@ This could be fixed in theory and Stripe subscriptions are great overall, but we
 We are building all of our analytics and metrics on top of [Tinybird](https://tinybird.co), a modern real-time data platform, so we reused the existing data to power our billing.
 Every event is ingested into Tinybird and we can run aggregations against that data later or in real time.
 
-A vertification event at Unkey looks like this, I'll omit unnecessary fields:
+A vertification event at Viraza looks like this, I'll omit unnecessary fields:
 
 ```json title="Verification Event"
 {
@@ -200,7 +200,7 @@ const workspaces = await io.runTask('list workspaces', async () =>
 );
 ```
 
-Afterwards we fetch the usage for both keys and verifications and finalize the invoice. The code is all open source, if you're interested: [create-invoice.ts](https://github.com/unkeyed/unkey/blob/main/apps/workflows/jobs/create-invoice.ts)
+Afterwards we fetch the usage for both keys and verifications and finalize the invoice. The code is all open source, if you're interested: [create-invoice.ts](https://github.com/virazait/blob/main/apps/workflows/jobs/create-invoice.ts)
 
 ## Results
 

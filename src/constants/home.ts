@@ -17,7 +17,7 @@ import { Alignment, Fit } from '@rive-app/react-canvas';
 
 export const homeHeaderLinks = {
   social: [
-    { id: 'discord', label: 'Discord', href: 'https://unkey.com/discord' },
+    { id: 'discord', label: 'Discord', href: 'https://viraza.net/discord' },
     { id: 'github', label: 'GitHub', href: GITHUB_URL, metric: '5.3k' },
   ],
   auth: [
@@ -28,9 +28,9 @@ export const homeHeaderLinks = {
 
 export const homeContentData = {
   hero: {
-    title: 'The Developer Platform for Modern APIs',
+    title: "Votre partenaire numérique de confiance",
     description:
-      'Unkey unifies your infrastructure. Deploy APIs instantly, route traffic through global gateways, and understand usage in one place.',
+      "Viraza conçoit des solutions IT sur mesure pour transformer votre entreprise. De l'infrastructure cloud aux applications métier, nous accélérons votre transformation digitale.",
     primaryCta: { label: 'Start for free', href: APP_URL },
     secondaryCta: { label: 'View on GitHub', href: GITHUB_URL },
     poster: { src: heroPosterImage.src, width: 1533, height: 908 },
@@ -45,11 +45,11 @@ export const homeContentData = {
     heading: createElement(
       Fragment,
       null,
-      'Unify your fragmented API stack with a single control plane for\n',
-      createElement('mark', null, 'access and traffic.'),
+      'Une gamme complète de solutions digitales pour\n',
+      createElement('mark', null, 'tous vos besoins IT.'),
     ),
     description:
-      'Stop assembling your API stack piece by piece. Running APIs at scale usually means juggling hosting, gateways, rate limits, and monitoring across multiple vendors.',
+      'Stop chercher des solutions disparates. Viraza vous propose un écosystème unifié d\'applications et services pour gérer votre éducation, votre entreprise et vos projets numériques.',
     riveDefaults: {
       src: '/rive/home/control-plane/control-plane.riv',
       fonts: {
@@ -64,16 +64,16 @@ export const homeContentData = {
     cards: [
       {
         id: 'branch',
-        title: 'Branch Overview',
-        body: 'Faster to ship. Go from code to running API in minutes. Test safely, promote when ready, roll back if needed.',
+        title: 'Syrcow',
+        body: 'Notre solution de chatbot IA pour l\'éducation et l\'assistance. Accompagnez vos étudiants et collaborateurs 24/7 avec une intelligence artificielle sur mesure.',
         rive: {
           artboard: 'branch',
         },
       },
       {
         id: 'keys',
-        title: 'Manage API Keys',
-        body: 'Safer by default. Protect every endpoint with keys, rate limits, and instant access revocation out of the box.',
+        title: 'MyEduc 360',
+        body: 'Plateforme éducative tout-en-un. Gérez les inscriptions, les cours, les évaluations et le suivi pédagogique dans un environnement cloud sécurisé.',
         rive: {
           artboard: 'api',
           autoBind: false,
@@ -81,8 +81,8 @@ export const homeContentData = {
       },
       {
         id: 'control',
-        title: 'Control Plane',
-        body: 'Simpler to run. One single unified platform for deployments, gateways, and full observability.',
+        title: 'Snen',
+        body: 'Solution de gestion administrative pour les établissements scolaires. Simplifiez la gestion des dossiers, des emplois du temps et des communications.',
         rive: {
           artboard: 'control',
           autoBind: false,
@@ -90,8 +90,8 @@ export const homeContentData = {
       },
       {
         id: 'usage',
-        title: 'Usage 30 Days',
-        body: 'Visible from day one. Every request logged. Every decision tracked. Debug issues before users notice.',
+        title: 'Infogérance',
+        body: 'Déléguez la gestion de votre infrastructure IT. Supervision, maintenance, sécurité et support — nous gérons tout pour vous.',
         rive: {
           artboard: 'usage',
           autoBind: false,
@@ -100,50 +100,50 @@ export const homeContentData = {
     ],
   },
   buildDeploy: {
-    heading: 'Deploy in minutes. Roll back in seconds. Ship with confidence at any scale.',
+    heading: 'Découvrez nos solutions phares pour la transformation digitale.',
     description:
-      'Infrastructure that moves with your code. Review changes in preview, then promote the exact version you tested.',
+      'Chez Viraza, nous développons des applications modernes qui répondent aux défis spécifiques de l\'éducation, de l\'administration et des services IT.',
     panels: [
       {
         id: 'connect',
-        tabLabel: 'Connect',
-        title: 'Connect a repo and push code',
-        subtitle: 'Git-based deploys, zero setup',
-        body: 'Link your Git repository once and deploy automatically on every push. No complex pipelines or manual steps needed.',
+        tabLabel: 'Syrcow',
+        title: 'Syrcow — Assistant IA intelligent',
+        subtitle: 'Chatbot éducatif et professionnel',
+        body: 'Syrcow est notre chatbot dernier cri basé sur l\'IA générative. Il répond aux questions des étudiants, automatise le support et assiste vos équipes 24h/24 avec des réponses précises et contextualisées.',
         image: buildDeployConnectImage.src,
       },
       {
         id: 'deploy',
-        tabLabel: 'Deploy',
-        title: 'Deploy Docker containers',
-        subtitle: 'Any language, any framework',
-        body: 'Run real containers that stay online, keeping the serverless feel while avoiding short-lived runtimes.',
+        tabLabel: 'MyEduc 360',
+        title: 'MyEduc 360 — Plateforme éducative',
+        subtitle: 'Gestion scolaire tout-en-un',
+        body: 'Une plateforme complète pour les établissements d\'enseignement : gestion des inscriptions, planning des cours, suivi pédagogique, notes, communications et tableaux de bord en temps réel.',
         image: buildDeployDeployImage.src,
         hasLogos: true,
         logos: buildDeployTechnologyLogos,
       },
       {
         id: 'preview',
-        tabLabel: 'Preview',
-        title: 'Previews for every commit',
-        subtitle: 'Test every commit before it ships',
-        body: 'Test changes in a separate environment, then promote when the results look right.',
+        tabLabel: 'Snen',
+        title: 'Snen — Gestion administrative',
+        subtitle: 'Simplifiez vos processus',
+        body: "Snen digitalise l'ensemble de vos processus administratifs : dossiers élèves, emplois du temps, gestion du personnel, facturation et reporting. Fini le papier, place à l'efficacité.",
         image: buildDeployPreviewImage.src,
       },
       {
         id: 'ship',
-        tabLabel: 'Ship',
-        title: 'Ship immutable versions',
-        subtitle: 'Instant rollbacks, no guesswork',
-        body: 'Keep releases safe with fast rollback paths, switch back instantly without redeploying. The previous production instance stays running for 30 minutes.',
+        tabLabel: 'Infogérance',
+        title: 'Infogérance IT — On s\'occupe de tout',
+        subtitle: 'Gérez votre infrastructure en toute sérénité',
+        body: "Déléguez la gestion complète de votre infrastructure IT : supervision 24/7, maintenance prédictive, sécurité proactive, sauvegarde et support technique. Vous vous concentrez sur votre métier, on gère le reste.",
         image: buildDeployShipImage.src,
       },
       {
         id: 'validate',
-        tabLabel: 'Validate',
-        title: 'Validate releases automatically',
-        subtitle: 'Branch protection & OpenAPI checks',
-        body: 'Make it really hard to ship broken APIs. OpenAPI diffs automatically flag breaking changes before they hit production.',
+        tabLabel: 'Cloud',
+        title: 'Solutions Cloud & Hébergement',
+        subtitle: 'Infrastructure scalable et sécurisée',
+        body: 'Déployez vos applications sur notre infrastructure cloud sécurisée. Hébergement haute disponibilité, sauvegarde automatisée et conformité RGPD pour toutes vos données sensibles.',
         image: buildDeployValidateImage.src,
         textTopClass: 'lg:pt-[7.875rem]',
       },
@@ -226,15 +226,15 @@ export const homeContentData = {
     ],
   },
   production: {
-    label: 'Built for production',
+    label: 'Pourquoi choisir Viraza',
     items: [
       {
-        title: 'High availability',
-        text: 'Unkey deploys multiple replicas in different availability zones so your app survives during outages.',
+        title: 'Expertise locale',
+        text: "Viraza est une équipe d'experts passionnés basés en Afrique. Nous comprenons les enjeux locaux et proposons des solutions adaptées à votre contexte.",
       },
       {
-        title: 'Proactive protection',
-        text: "Take immediate control over your system's security with the ability to instantly revoke access, providing swift response to potential threats.",
+        title: 'Accompagnement sur mesure',
+        text: "Chaque projet est unique. Nous vous accompagnons de la conception à la maintenance, avec un suivi personnalisé et une écoute constante de vos besoins.",
       },
     ],
   },
@@ -242,14 +242,14 @@ export const homeContentData = {
     heading: createElement(
       Fragment,
       null,
-      'Start small, scale to global traffic, and ',
-      createElement('mark', null, 'stay protected'),
-      ' without managing infrastructure manually.',
+      'Des solutions qui évoluent avec vous, de la PME à ',
+      createElement('mark', null, "la grande entreprise"),
+      '.',
     ),
     description:
-      'Platform that scales with you. Control, routing, and traffic handling are designed for multi-region from day one.',
-    buttonLabel: 'Read the docs',
-    buttonHref: 'https://unkey.com/docs/build-and-deploy/regions',
+      "Viraza vous accompagne à chaque étape de votre croissance. De l'audit initial à la solution industrielle, notre plateforme s'adapte à vos besoins.",
+    buttonLabel: 'Nous contacter',
+    buttonHref: 'https://viraza.net/contact',
     riveDefaults: {
       src: '/rive/home/scale/icons.riv',
       fit: Fit.Cover,
@@ -257,29 +257,29 @@ export const homeContentData = {
     },
     features: [
       {
-        title: 'Multi-region routing',
-        text: 'Route requests to the nearest region for consistently low latency.',
+        title: 'Solutions sur mesure',
+        text: 'Chaque produit Viraza est conçu pour répondre à un besoin spécifique. Pas de solution standard, mais un accompagnement personnalisé.',
         rive: {
           artboard: 'main 1',
         },
       },
       {
-        title: 'Automatic scaling',
-        text: 'Capacity follows demand, with no knobs to babysit and no manual ops.',
+        title: 'Technologie moderne',
+        text: 'Nos applications utilisent les technologies les plus récentes : cloud, IA, et architectures scalables pour garantir performance et fiabilité.',
         rive: {
           artboard: 'main 2',
         },
       },
       {
-        title: 'Predictable pricing',
-        text: "Start free, then scale up when you're ready and keep billing predictable as you grow.",
+        title: 'Pricing transparent',
+        text: "Des tarifs clairs et adaptés à votre budget. Pas de frais cachés, pas de surprises. Un devis personnalisé pour chaque projet.",
         rive: {
           artboard: 'main 3',
         },
       },
       {
-        title: 'Built-in protection',
-        text: 'Lock down access with API keys, edge rate limits, and instant revoke controls.',
+        title: 'Sécurité et conformité',
+        text: 'Toutes nos solutions respectent les normes RGPD et les standards de sécurité les plus stricts. Vos données sont protégées.',
         rive: {
           artboard: 'main 4',
         },
@@ -287,62 +287,62 @@ export const homeContentData = {
     ],
   },
   observe: {
-    heading: 'Stay in sync with your traffic in real time.',
-    subheading: 'Every request is logged. Every decision is visible.',
+    heading: 'Suivez vos projets en temps réel.',
+    subheading: 'Chaque étape est visible. Chaque décision est tracée.',
     riveDefaults: {
       src: '/rive/home/observe/observe.riv',
       alignment: Alignment.BottomCenter,
     },
     mobileImage: observeDashImage.src,
-    buttonLabel: 'Read the docs',
-    buttonHref: 'https://unkey.com/docs/observability/overview',
+    buttonLabel: 'En savoir plus',
+    buttonHref: 'https://viraza.net/contact',
     columns: [
       {
-        lead: 'Automatic logs and metrics collection.',
-        rest: 'Captures verifications, rate limits, audit logs, HTTP request/response logs, and much more automatically.',
+        lead: 'Suivi de projet en temps réel.',
+        rest: "Visualisez l'avancement de vos projets Viraza, les jalons atteints et les prochaines étapes depuis votre tableau de bord dédié.",
       },
       {
-        lead: 'Spot spikes and unusual patterns.',
-        rest: 'Use metrics to flag anomalies, errors, and performance issues — and feed signals into your alerting stack.',
+        lead: 'Rapports et analyses.',
+        rest: "Accédez à des rapports détaillés sur l'utilisation de vos solutions, les performances et les indicateurs clés de votre activité.",
       },
       {
-        lead: 'Debug and explore in the dashboard.',
-        rest: 'Filter by deployment, user, region, custom tags, and status to quickly understand what’s going on.',
+        lead: 'Support réactif.',
+        rest: "Notre équipe est disponible pour vous assister. Suivez l'état de vos tickets, les temps de réponse et les résolutions apportées.",
       },
       {
-        lead: 'Query via API, from your own systems.',
-        rest: 'Run analytics queries over your verification data via the HTTP API from your stack.',
+        lead: 'Tableaux de bord personnalisés.',
+        rest: "Configurez vos propres indicateurs et visualisez les données qui comptent vraiment pour votre entreprise.",
       },
     ],
   },
   portal: {
-    heading: 'First-class developer experience for your users.',
-    subheading: 'API keys, usage, and docs—ready out of the box.',
-    buttonLabel: 'Coming soon',
-    buttonHref: '',
+    heading: "Un accompagnement complet de A à Z.",
+    subheading: 'De l\'audit à la maintenance, Viraza est votre partenaire IT.',
+    buttonLabel: 'Nous contacter',
+    buttonHref: 'https://viraza.net/contact',
     cards: [
       {
-        text: 'Zero code required. A fully hosted developer portal with nothing to build or maintain.',
+        text: 'Audit et conseil : nous analysons vos besoins et vous proposons la solution la mieux adaptée à votre contexte.',
         graphic: portalZeroImage.src,
         textWidthClass: 'max-w-[23.375rem]',
       },
       {
-        text: 'Beautiful API docs. OpenAPI-generated documentation, hosted by Unkey and always in sync.',
+        text: 'Développement sur mesure : nos experts conçoivent et développent des applications parfaitement adaptées à vos processus métier.',
         graphic: portalDocsImage.src,
         textWidthClass: 'max-w-[25.6875rem]',
       },
       {
-        text: 'Keys and usage, self-serve. Users manage their API keys and view usage without support requests.',
+        text: "Maintenance et support : nous assurons le suivi, les mises à jour et l'assistance technique pour toutes nos solutions.",
         graphic: portalKeysImage.src,
         textWidthClass: 'max-w-[25.5625rem]',
       },
     ],
   },
   cta: {
-    heading: 'Turn your API stack into one workflow.',
-    subheading: 'Start for free, integrate in minutes, and scale when you need to.',
-    buttonLabel: 'Start for free',
-    buttonHref: APP_URL,
+    heading: 'Prêt à transformer votre entreprise avec le digital ?',
+    subheading: 'Contactez-nous dès aujourd\'hui pour un audit gratuit de vos besoins IT.',
+    buttonLabel: 'Contactez-nous',
+    buttonHref: 'https://viraza.net/contact',
     poster: ctaPosterImage.src,
     videos: [
       { src: '/videos/home/cta.mp4', type: 'video/mp4; codecs=hvc1' },
@@ -354,8 +354,8 @@ export const homeContentData = {
 export const homePageData = {
   pathname: '/',
   metadata: {
-    tagline: 'The Developer Platform for Modern APIs',
-    description: 'Unkey brings API deployment, gateways, and observability into one platform.',
+    tagline: 'Votre partenaire numérique de confiance',
+    description: "Viraza conçoit des solutions IT sur mesure pour l'éducation et les entreprises. Applications cloud, IA, chatbot et infogérance.",
     pathname: '/',
   },
 };

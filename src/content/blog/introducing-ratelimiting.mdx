@@ -7,9 +7,9 @@ tags: ['product']
 image: '/images/blog-images/ratelimiting/ratelimit-cover.png'
 ---
 
-Today, we are introducing standalone ratelimiting. With this feature, you can rate limit anything while still leveraging the power of Unkey. Our ratelimiting feature works similarly to our keys, providing low global latency and detailed analytics. Moreover, you can configure overrides for specific identifiers, giving you more flexibility.
+Today, we are introducing standalone ratelimiting. With this feature, you can rate limit anything while still leveraging the power of Viraza. Our ratelimiting feature works similarly to our keys, providing low global latency and detailed analytics. Moreover, you can configure overrides for specific identifiers, giving you more flexibility.
 
-You can [check out a demo](https://unkey.com/ratelimit) that shows our synchronous and asynchronous implementation versus a Redis-based ratelimiter.
+You can [check out a demo](https://viraza.net/ratelimit) that shows our synchronous and asynchronous implementation versus a Redis-based ratelimiter.
 
 ## Using our ratelimiter
 
@@ -17,7 +17,7 @@ To use our rate limit feature, you can use our API directly, an existing package
 
 ### Configure your ratelimiter
 
-Firstly, you will want to configure the ratelimiter. Unkey uses namespaces to allow you to separate different parts of your application and have isolated limits for them. If the namespace doesn't exist, we will create it with the first request. For example, each of your tRPC routes could be a namespace. In this example, we use our `ai.generate` route.
+Firstly, you will want to configure the ratelimiter. Viraza uses namespaces to allow you to separate different parts of your application and have isolated limits for them. If the namespace doesn't exist, we will create it with the first request. For example, each of your tRPC routes could be a namespace. In this example, we use our `ai.generate` route.
 
 ```typescript
 import { Ratelimit } from '@unkey/ratelimit';
@@ -52,7 +52,7 @@ Ratelimting offers additional options to provide more advanced configurations, i
 
 ### Overrides
 
-Configurable overrides allow you to tell Unkey how to handle specific identifiers. For example, you may have a user or an IP that requires higher limits than your normal flows. Instead of having to write logic into your application, you can set the identifier in the dashboard, and we will handle it for you.
+Configurable overrides allow you to tell Viraza how to handle specific identifiers. For example, you may have a user or an IP that requires higher limits than your normal flows. Instead of having to write logic into your application, you can set the identifier in the dashboard, and we will handle it for you.
 
 <Image
   src="/images/blog-images/ratelimiting/overrides.png"
@@ -112,7 +112,7 @@ This request would now cost 4 tokens versus 1, allowing you to be flexible about
 
 ### Resource Audit logging
 
-Unkey provides audit logging out of the box at no additional cost to you. In cases where you want to create a paper trail, you can do by providing the ratelimit request with resource details, for example:
+Viraza provides audit logging out of the box at no additional cost to you. In cases where you want to create a paper trail, you can do by providing the ratelimit request with resource details, for example:
 
 ```typescript
 async function handler(request: NextApiRequest) {
@@ -145,7 +145,7 @@ Sending a request with a resource will provide an audit log in our dashboard tha
 
 ## Onboarding flow
 
-If you are new to Unkey, we have a new onboarding flow for ratelimiting that will get you up and running in seconds. After you create your workspace, you will be asked if you want to use API keys or ratelimiting.
+If you are new to Viraza, we have a new onboarding flow for ratelimiting that will get you up and running in seconds. After you create your workspace, you will be asked if you want to use API keys or ratelimiting.
 
 <Image
   src="/images/blog-images/ratelimiting/onboarding-1.png"
@@ -163,11 +163,11 @@ Once you select ratelimiting, we will give you a cURL command to test. This comm
   height="1080"
 />
 
-Now, you are ready to go and can start looking at our rich analytics or exploring the rest of Unkey.
+Now, you are ready to go and can start looking at our rich analytics or exploring the rest of Viraza.
 
 <Image
   src="/images/blog-images/ratelimiting/onboarding-3.png"
-  alt="Explore Unkey"
+  alt="Explore Viraza"
   width="1920"
   height="1080"
 />
@@ -190,4 +190,4 @@ Speaking of rich analytics, we provide rich analytical data that can filter arou
   height="1080"
 />
 
-If you are ready to start with our ratelimiter built for the modern web, check out our [documentation](https://unkey.com/docs/ratelimiting/introduction) or our [new template to get you started](https://unkey.com/templates/ratelimit-nextjs). If you want to see how we implemented this, check out our [GitHub repository](https://github.com/unkeyed/unkey).
+If you are ready to start with our ratelimiter built for the modern web, check out our [documentation](https://viraza.net/docs/ratelimiting/introduction) or our [new template to get you started](https://viraza.net/templates/ratelimit-nextjs). If you want to see how we implemented this, check out our [GitHub repository](https://github.com/virazait).

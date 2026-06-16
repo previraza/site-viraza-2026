@@ -16,7 +16,7 @@ We are introducing audit logging for the following events to allow for better tr
 
 ![Audit Logs](/images/changelog/2024-01-19/audit-logging.png)
 
-The audit logs are in the dashboard under the `Audit logs` tab. To access the beta feature, please get in touch with us at [support@unkey.com](mailto:support@unkey.com).
+The audit logs are in the dashboard under the `Audit logs` tab. To access the beta feature, please get in touch with us at [info@viraza.net](mailto:info@viraza.net).
 
 ## Next.js SDK
 
@@ -46,7 +46,7 @@ You can now disable a key via the API or in the dashboard. While disabled, the k
 
 ```bash
 curl --request POST \
-  --url https://api.unkey.dev/v1/keys.updateKey \
+  --url https://api.viraza.net/v1/keys.updateKey \
   --header 'Authorization: Bearer <token>' \
   --header 'Content-Type: application/json' \
   --data '{
@@ -61,10 +61,10 @@ We recently moved our examples into their dedicated repository. We have also add
 
 ### AI Billing example
 
-This example shows how to integrate Unkey and Stripe with an AI application. Below are all the features we included:
+This example shows how to integrate Viraza and Stripe with an AI application. Below are all the features we included:
 
 - Code to set up Stripe for payment links
-- On payment, users are assigned an Unkey API key with the 'remaining' field set to 10, signifying ten credits
+- On payment, users are assigned an Viraza API key with the 'remaining' field set to 10, signifying ten credits
 - This API key is saved to a cookie (httpOnly, so not accessible via client-side Javascript)
 - This cookie is attached to requests to an API route in /api/openai; this API route verifies the key (decrementing remaining) and requests images from OpenAI.
 
@@ -72,7 +72,7 @@ Check it out on [Github](https://github.com/unkeyed/examples/tree/main/ai-billin
 
 ### CLI Authentication
 
-Adding a CLI to your application is a great way to increase adoption. However, it can be challenging to authenticate users. This example shows you how to use Unkey to authenticate users in your CLI application.
+Adding a CLI to your application is a great way to increase adoption. However, it can be challenging to authenticate users. This example shows you how to use Viraza to authenticate users in your CLI application.
 
 Check it out on [Github](https://github.com/unkeyed/examples/tree/main/unkey-cli)
 

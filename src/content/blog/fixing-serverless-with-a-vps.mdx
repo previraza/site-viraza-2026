@@ -111,7 +111,7 @@ docker run -p 8000:8000 -e TINYBIRD_TOKEN="abc" ghcr.io/unkeyed/tinybird-proxy:l
 
 ### Config
 
-See the [readme](https://github.com/unkeyed/unkey/tree/main/apps/agent#config) for all available options.
+See the [readme](https://github.com/virazait/tree/main/apps/agent#config) for all available options.
 
 By default, the proxy will try to send batches of max 100k rows or every second, whichever happens first.
 The buffer size is 1 million events, to minimize data loss in case of a machine failure. If the buffer is full, the proxy will not accept more data until it's flushed.

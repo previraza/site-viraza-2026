@@ -19,15 +19,15 @@ export const aboutContentData = {
   title: createElement(
     Fragment,
     null,
-    'API management ',
+    'Solutions IT ',
     createElement('br', { className: 'inline sm:hidden xl:inline' }),
     createElement(
       'span',
       { className: 'sm:hidden xl:inline' },
-      'for ',
-      createElement('mark', null, 'fast and'),
+      'pour une ',
+      createElement('mark', null, 'transformation'),
       '\n',
-      createElement('mark', null, 'scalable'),
+      createElement('mark', null, 'numérique'),
       ' software.',
     ),
     createElement(
@@ -37,69 +37,69 @@ export const aboutContentData = {
       createElement('mark', null, 'fast '),
       '\n',
       createElement('mark', null, 'and scalable'),
-      ' software.',
+      ' réussie.',
     ),
   ),
   description: createElement(
     Fragment,
     null,
-    'Founded in 2023 by ',
-    createElement('span', { className: 'font-medium text-foreground' }, 'James Perkins'),
-    ' and ',
-    createElement('span', { className: 'font-medium text-foreground' }, 'Andreas Thomas,'),
-    ' Unkey is building a fast, scalable, and straightforward API management platform.',
+    'Fondée par des experts en technologies digitales, ',
+    createElement('span', { className: 'font-medium text-foreground' }, 'Viraza'),
+    ' conçoit des solutions IT innovantes pour ',
+    createElement('span', { className: 'font-medium text-foreground' }, "l'éducation et les entreprises,"),
+    ' avec une expertise reconnue en développement web, cloud et intelligence artificielle.',
   ),
   values: [
     {
-      title: 'Quality',
-      description: 'We handle the complexity, so your experience stays simple.',
+      title: 'Qualité',
+      description: "Nous livrons des solutions robustes et performantes, testées et validées avant chaque déploiement.",
     },
     {
-      title: 'Open company',
-      description: 'We believe transparency leads to better decisions.',
+      title: 'Innovation',
+      description: "Nous restons à la pointe de la technologie pour offrir les meilleures solutions à nos clients.",
     },
     {
-      title: 'Ownership',
-      description: 'We trust our team to build, ship, and own their work.',
+      title: 'Proximité',
+      description: "Chaque client est unique. Nous privilégions l'écoute et l'échange pour comprendre vos vrais besoins.",
     },
     {
-      title: 'Sustainability',
-      description: 'We protect work-life balance so our team delivers great value.',
+      title: 'Engagement',
+      description: "Nous nous engageons sur la qualité, les délais et la satisfaction de nos clients.",
     },
     {
-      title: 'Security first',
-      description: "We take security seriously and won't compromise to move faster.",
+      title: 'Sécurité',
+      description: "La protection de vos données est notre priorité absolue. Conformité RGPD garantie.",
     },
     {
-      title: 'Customer obsessed',
-      description: 'Real user feedback drives what we build and how fast we ship.',
+      title: 'Accompagnement',
+      description: "Du conseil à la maintenance, nous sommes présents à chaque étape de votre projet.",
     },
   ],
   team: {
-    title: 'Meet the people building Unkey every day.',
-    subtitle: 'We love meeting up for offsites sometimes.',
-    badgeLabel: 'The Team',
+    title: "L'équipe qui construit Viraza chaque jour.",
+    subtitle: 'Passionnés par la technologie et animés par l\'innovation.',
+    badgeLabel: "L'Équipe",
     qaItems: [
       {
-        question: "What's your goal with Unkey?",
+        question: "Quelle est la mission de Viraza ?",
         answer:
-          "Our goal with Unkey is build an open source API management platform that doesn't require the burden or cost of traditional API management platforms like Kong or Azure APM. We want to embrace what developers know today, a global REST API that allows you to deploy and protect your API on the edge in under 5 minutes.",
+          "Notre mission est de rendre la technologie accessible et utile pour les entreprises et les institutions éducatives. Nous croyons que le numérique est un levier puissant de développement et nous voulons accompagner nos clients dans cette transformation avec des solutions concrètes et adaptées.",
       },
       {
-        question: 'What are you most proud of at Unkey?',
+        question: "Qu'est-ce qui vous rend fiers chez Viraza ?",
         answer:
-          'We are extremely happy with the culture we have built at Unkey, our team is small but powerful. Everyone in our team has input on the next feature or idea we have for Unkey, allowing us to build the best API management platform.',
+          "Nous sommes fiers de créer des solutions qui ont un impact réel. Voir nos clients utiliser Syrcow, MyEduc 360 ou Snen au quotidien et constater les gains d'efficacité est notre plus belle récompense. Notre équipe est soudée, compétente et animée par une vraie passion pour la technologie.",
       },
       {
-        question: "What's been the biggest challenge?",
+        question: "Quel a été le plus grand défi ?",
         answer:
-          "The hardest part is prioritization. With a small team, we can't build everything at once, so we're careful to ship only what truly helps users.",
+          "Le plus grand défi est de concilier innovation et accessibilité. Nous voulons des solutions avancées, mais nous devons rester accessibles et adaptées au contexte local. Chaque projet est un nouveau défi qui nous pousse à nous dépasser.",
       },
     ],
     quote: createElement(
       Fragment,
       null,
-      `"We're James and Andreas. We founded Unkey with the vision of creating an API management platform that is both powerful and easy to use. We believe that APIs are the building blocks of the modern web, and we want to make it easier for developers to build and manage them."`,
+      `"Nous avons fondé Viraza avec la vision de créer des solutions digitales qui transforment réellement les organisations. Nous croyons que la technologie bien conçue peut simplifier la vie, améliorer l'éducation et booster la compétitivité des entreprises."`,
     ),
     founders: [
       {
@@ -113,18 +113,19 @@ export const aboutContentData = {
         imageSrc: andreasThomasImage.src,
       },
     ],
+    // TODO: replace with Viraza founders' photos and info
   },
   investors: {
-    label: 'Investors',
+    label: 'Partenaires',
     heading: createElement(
       Fragment,
       null,
-      'Backed by ',
-      createElement('mark', null, 'the finest minds'),
-      ' in modern infrastructure',
+      'Soutenus par ',
+      createElement('mark', null, 'des partenaires de confiance'),
+      "",
     ),
     description:
-      "Unkey is supported by leading investors and founders who've built and scaled some of today's most trusted developer platforms.",
+      "Viraza collabore avec des partenaires technologiques et institutionnels de premier plan pour offrir des solutions toujours plus performantes.",
     list: [
       {
         name: 'Andy McLoughlin',
@@ -183,9 +184,9 @@ export const aboutContentData = {
     heading: createElement(
       Fragment,
       null,
-      'Explore insights, tips, and updates',
+      'Explorez nos articles, astuces et actualités',
       createElement('br'),
-      createElement('span', { className: 'text-gray-60' }, 'directly from our team members.'),
+      createElement('span', { className: 'text-gray-60' }, "directement de l'équipe Viraza."),
     ),
     ctaLabel: 'Read all stories',
     ctaHref: '/blog',

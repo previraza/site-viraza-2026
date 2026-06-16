@@ -7,7 +7,7 @@ author: andreas
 tags: ['engineering']
 ---
 
-Unkey allows users to create an unlimited number of API keys for their applications. Counting these for our dashboard or API has become a growing issue for us.
+Viraza allows users to create an unlimited number of API keys for their applications. Counting these for our dashboard or API has become a growing issue for us.
 
 Most APIs have fewer than a thousand keys, however some of our larger customers have hundreds of thousands. And those customers are also the ones hitting our API the most.
 
@@ -41,7 +41,7 @@ SELECT count(*) FROM keys WHERE key_space_id = ?
 We were looking at a few options how to fix this:
 
 1. Caching the count as part of a larger query
-2. Caching the `count(*)` query separately in our [tiered cache](https://www.unkey.com/blog/announcing-unkey-cache-package) using SWR semantics.
+2. Caching the `count(*)` query separately in our [tiered cache](https://viraza.net/blog/announcing-unkey-cache-package) using SWR semantics.
 3. Adding two new columns for storing approximated counts.
 
 ## Solution

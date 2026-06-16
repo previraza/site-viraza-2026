@@ -1,7 +1,7 @@
 ---
 date: 2025-12-11
 title: How to ratelimit public pages
-description: Learn how to use Unkey to ratelimit public pages, like newsletter sign up forms or login attempts.
+description: Learn how to use Viraza to ratelimit public pages, like newsletter sign up forms or login attempts.
 author: james
 image: '/images/blog-images/covers/ratelimit-public.jpg'
 tags: ['tutorials']
@@ -31,13 +31,13 @@ The [thumbmark.js](https://github.com/thumbmarkjs/thumbmarkjs) library generates
 
 This creates a robust identifier that persists across sessions and IP changes.
 
-## Implementing Rate Limiting with Unkey
+## Implementing Rate Limiting with Viraza
 
-Let's walk through a complete implementation using Next.js, Unkey for rate limiting, and thumbmark.js for device fingerprinting. You can see the full example in the [unkey-fingerprint](https://github.com/perkinsjr/unkey-fingerprint) repository.
+Let's walk through a complete implementation using Next.js, Viraza for rate limiting, and thumbmark.js for device fingerprinting. You can see the full example in the [unkey-fingerprint](https://github.com/perkinsjr/unkey-fingerprint) repository.
 
-### Step 1: Setting Up Unkey
+### Step 1: Setting Up Viraza
 
-First, create an Unkey account and generate a root key with rate limiting permissions:
+First, create a Viraza account and generate a root key with rate limiting permissions:
 
 ```bash
 # Add to your .env.local
@@ -150,7 +150,7 @@ export function validateFingerprint(fingerprintData: unknown): ValidationResult 
 
 ### Step 4: API Endpoint with Rate Limiting
 
-Create the API endpoint that combines fingerprint validation with Unkey rate limiting:
+Create the API endpoint that combines fingerprint validation with Viraza rate limiting:
 
 ```typescript
 // app/api/waitlist/route.ts
@@ -207,7 +207,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check rate limit using Unkey with the validated fingerprint
+    // Check rate limit using Viraza with the validated fingerprint
     const { success, limit, remaining, reset } = await limiter.limit(fingerprintData.thumbmark);
 
     if (!success) {
@@ -264,7 +264,7 @@ Never trust client-provided fingerprint data. Validate:
 
 ### 2. Fallback Mechanisms
 
-Implement proper fallback handling for when Unkey is unavailable:
+Implement proper fallback handling for when Viraza is unavailable:
 
 ```typescript
 const fallback = (identifier: string) => ({
@@ -338,7 +338,7 @@ if (!success) {
 
 ## Conclusion
 
-Device fingerprinting combined with Unkey's rate limiting provides a robust solution for protecting public endpoints. This approach is more reliable than IP-based restrictions and offers better protection against automated abuse.
+Device fingerprinting combined with Viraza's rate limiting provides a robust solution for protecting public endpoints. This approach is more reliable than IP-based restrictions and offers better protection against automated abuse.
 
 The complete example demonstrates how to implement this pattern securely, with proper validation, error handling, and user experience considerations. By following these practices, you can protect your public endpoints while maintaining a smooth experience for legitimate users.
 

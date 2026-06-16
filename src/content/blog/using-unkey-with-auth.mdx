@@ -1,17 +1,17 @@
 ---
 date: 2023-09-21
-title: 'Using Unkey with your Authentication Provider'
+title: 'Using Viraza with your Authentication Provider'
 image: '/images/blog-images/covers/unkey-auth-provider.jpg'
-description: 'Learn how to use Unkey with an auth provider, to associate your keys with your users.'
+description: 'Learn how to use Viraza with an auth provider, to associate your keys with your users.'
 author: james
 tags: ['tutorials']
 ---
 
 When working with your external facing API and having a client application, you need to identify which user owns an API Key. Having a way to identify the user allows you to understand their usage of your product better. This blog is going to cover how you can use your authentication provider to add a way to identify the user.
 
-## What is Unkey?
+## What is Viraza?
 
-Unkey is an open source API management platform that helps developers secure, manage, and scale their APIs. Unkey has built-in features that can make it easier than ever to provide an API to your end users, including:
+Viraza is an open source API management platform that helps developers secure, manage, and scale their APIs. Viraza has built-in features that can make it easier than ever to provide an API to your end users, including:
 
 - Per key rate limiting
 - Limited usage keys
@@ -30,7 +30,7 @@ The first thing we want to do is create our Next.js application and install our 
 npx create-next-app@latest unkey-with-auth
 ```
 
-We need Unkey's typescript library and Clerk's next.js package for dependencies.
+We need Viraza's typescript library and Clerk's next.js package for dependencies.
 
 ```bash
 npm install @unkey/api @clerk/nextjs
@@ -44,7 +44,7 @@ npx shadcn-ui@latest init
 npx shadcn-ui@latest add button input label card
 ```
 
-Make sure you include your Clerk secret key and publishable key in your `.env.local` file. You can find these in your Clerk dashboard. You will also need an Unkey root key and API ID. You can find these in your Unkey dashboard.
+Make sure you include your Clerk secret key and publishable key in your `.env.local` file. You can find these in your Clerk dashboard. You will also need a Viraza root key and API ID. You can find these in your Viraza dashboard.
 
 ```bash
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_xxxxxxxxxxxxxx
@@ -105,9 +105,9 @@ export const config = {
 
 ## Creating a key associated with a user.
 
-Unkey accepts an owner_id when creating a key that we can use to associate our auth provider's unique identifier, such as `user_id`. In our example application, we are going to use a server action to create the key.
+Viraza accepts an owner_id when creating a key that we can use to associate our auth provider's unique identifier, such as `user_id`. In our example application, we are going to use a server action to create the key.
 
-### Create our Unkey client component
+### Create our Viraza client component
 
 We will create a client component that takes a name for an API. This API key name can make it easier to identify the critical self and not the owner in our demo, but it gives you an idea of how the flow would work. Create a folder called `keys` and a `client.tsx` file. Inside that file, add the following imports from our components from shadcn.
 
@@ -171,10 +171,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-4xl font-bold">
-          Welcome to the Unkey + Auth Provider
+          Welcome to the Viraza + Auth Provider
         </h1>
         <p className="text-xl mt-4">
-          This is a demo of how you can use Unkey to secure your API with an
+          This is a demo of how you can use Viraza to secure your API with an
           Auth Provider.
         </p>
         <UnkeyElements />
@@ -186,13 +186,13 @@ export default function Home() {
 
 ### Adding a server action
 
-Our server action will allow us to create a key in our application in the `keys` folder, add a `create.ts` file. Then, in this file, we will use our auth provider and Unkey together.
+Our server action will allow us to create a key in our application in the `keys` folder, add a `create.ts` file. Then, in this file, we will use our auth provider and Viraza together.
 
 ```typescript
 'use server';
 
 import { auth } from '@clerk/nextjs';
-import { Unkey } from '@unkey/api';
+import { Viraza } from '@unkey/api';
 
 export async function create(formData: FormData) {
   'use server';
@@ -312,7 +312,7 @@ export async function GET(request: Request) {
 }
 ```
 
-Unkey makes it easy to make business decisions. We can verify the key and then return a response based on the result. In this example, we will return a 401 if the key is invalid. If the key is valid, we are going to return the results.
+Viraza makes it easy to make business decisions. We can verify the key and then return a response based on the result. In this example, we will return a 401 if the key is invalid. If the key is valid, we are going to return the results.
 
 ### Updating our client component
 
@@ -469,10 +469,10 @@ The response from the API will look like this, and as you can see, we now associ
 }
 ```
 
-In the dashboard for Unkey, you can see the key and the owner ID and the name associated with it
+In the dashboard for Viraza, you can see the key and the owner ID and the name associated with it
 
 <Image src="/images/blog-images/unkey-with-auth/dashboard-example.png" alt="Unkey Dashboard" />
 
 ## Conclusion
 
-In this post, we have covered how to use Unkey with an auth provider to secure your API. We have covered how to associate a user with a key and then use that key to request our API. You can check out the code for this project here: [Example](https://github.com/unkeyed/examples/tree/main/unkey-clerk)
+In this post, we have covered how to use Viraza with an auth provider to secure your API. We have covered how to associate a user with a key and then use that key to request our API. You can check out the code for this project here: [Example](https://github.com/unkeyed/examples/tree/main/unkey-clerk)

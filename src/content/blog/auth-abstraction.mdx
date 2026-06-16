@@ -7,7 +7,7 @@ author: meg
 tags: ['engineering']
 ---
 
-Let's be honest – authentication can be a real pain, especially when you're just trying to contribute to an open-source project. At Unkey, we felt this pain firsthand. We're all about making developers' lives easier (it's literally our product!), so it felt pretty hypocritical to make contributors jump through authentication hoops just to run our project locally.
+Let's be honest – authentication can be a real pain, especially when you're just trying to contribute to an open-source project. At Viraza, we felt this pain firsthand. We're all about making developers' lives easier (it's literally our product!), so it felt pretty hypocritical to make contributors jump through authentication hoops just to run our project locally.
 
 The problem was clear: we needed robust authentication in production while eliminating the barrier of third-party service signups for contributors. This friction directly contradicted our "developer first" philosophy and was turning away potential contributors.
 
@@ -15,7 +15,7 @@ So we rolled up our sleeves and built a flexible auth abstraction layer – one 
 
 ## The Contributor Friction Problem
 
-When we first built Unkey, authentication wasn't just a feature – it was tightly woven throughout our codebase. Our previous auth provider's SDK functions were deeply embedded in our application code, creating a messy dependency that new contributors had to navigate.
+When we first built Viraza, authentication wasn't just a feature – it was tightly woven throughout our codebase. Our previous auth provider's SDK functions were deeply embedded in our application code, creating a messy dependency that new contributors had to navigate.
 
 This tight coupling created several real problems:
 
@@ -25,7 +25,7 @@ This tight coupling created several real problems:
 
 The feedback from our Discord community was brutally honest. One frustrated contributor summed it up perfectly: "so [auth provider] just made me suffer 2 hours straight." Another pointed out a specific configuration issue: "also less to get wrong when setting up. since [auth provider] doesn't enable workspaces by default, its easy to get wrong."
 
-The worst part was that it was almost always the same issues: obscure settings in our previous auth provider's dashboard that were easily overlooked. Contributors were rightfully annoyed with how much time they wasted configuring third-party environment variables and tweaking settings in some external dashboard, completely separate from Unkey itself.
+The worst part was that it was almost always the same issues: obscure settings in our previous auth provider's dashboard that were easily overlooked. Contributors were rightfully annoyed with how much time they wasted configuring third-party environment variables and tweaking settings in some external dashboard, completely separate from Viraza itself.
 
 It was something that shouldn't have been our problem, but we made it our problem – and we needed to fix it.
 
@@ -39,8 +39,8 @@ Here's what we were looking for:
 
 - **Rock-solid security** – No compromises on protecting user data and access control
 - **Enterprise-ready features** – Support for SSO, SAML, and other enterprise authentication methods
-- **Multi-tenancy support** – Organizations and teams are core to Unkey, so our auth solution needed to handle this complexity
-- **Scalability** – As Unkey grows, our authentication needs to grow with it
+- **Multi-tenancy support** – Organizations and teams are core to Viraza, so our auth solution needed to handle this complexity
+- **Scalability** – As Viraza grows, our authentication needs to grow with it
 
 **Developer Experience Requirements:**
 
@@ -58,7 +58,7 @@ Here's what we were looking for:
 
 Looking at these requirements, it was obvious that they were all pointing to a solution with proper abstraction. We didn't need to compromise on security to get a great developer experience; we just needed to design our system to accommodate both scenarios.
 
-What we didn't anticipate was the bonus feature this approach unlocked for self-hosting: BYOAP - Bring Your Own Auth Provider. The abstraction layer provides a clear interface and type definitions that make it possible for anyone self-hosting Unkey (which you can! let's talk!) to use their own auth provider instead of ours. All you need to do is implement our auth provider interface, and you can seamlessly integrate with whatever authentication system you already have in place.
+What we didn't anticipate was the bonus feature this approach unlocked for self-hosting: BYOAP - Bring Your Own Auth Provider. The abstraction layer provides a clear interface and type definitions that make it possible for anyone self-hosting Viraza (which you can! let's talk!) to use their own auth provider instead of ours. All you need to do is implement our auth provider interface, and you can seamlessly integrate with whatever authentication system you already have in place.
 
 ## Designing the Auth Abstraction Layer
 
@@ -197,16 +197,16 @@ And most importantly, **Auth is infrastructure, not product**. By treating authe
 
 ## Conclusion
 
-When we started this journey, we were tackling what seemed like a straightforward contributor experience issue: "How do we make it easier to run Unkey locally without signing up for third-party services?" What we ended up building was much more powerful.
+When we started this journey, we were tackling what seemed like a straightforward contributor experience issue: "How do we make it easier to run Viraza locally without signing up for third-party services?" What we ended up building was much more powerful.
 
-Our auth abstraction layer has transformed how we think about authentication at Unkey. It's no longer this tightly-coupled, vendor-specific puzzle that developers need to solve before they can contribute. Instead, it's an invisible piece of infrastructure that "just works" in development and scales seamlessly to meet our production needs.
+Our auth abstraction layer has transformed how we think about authentication at Viraza. It's no longer this tightly-coupled, vendor-specific puzzle that developers need to solve before they can contribute. Instead, it's an invisible piece of infrastructure that "just works" in development and scales seamlessly to meet our production needs.
 
 The immediate impact has been dramatic. New contributors can clone the repository, run a single command, and immediately start working on the codebase. No more Discord messages asking for help with authentication configuration. No more "I spent two hours just trying to get started." Just smooth, frictionless development.
 
 But the long-term benefits go beyond developer experience. Our abstraction layer has given us:
 
 - **Provider independence** – We can switch auth providers if needed without rewriting our application
-- **Self-hosting flexibility** – Users can bring their own auth provider when self-hosting Unkey
+- **Self-hosting flexibility** – Users can bring their own auth provider when self-hosting Viraza
 - **Simplified testing** – We can easily mock authentication in our test suite
 - **Cleaner codebase** – Authentication concerns are properly separated from business logic
 

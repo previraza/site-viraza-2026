@@ -6,41 +6,40 @@ import type { IPricingPlan, IPricingTableFeatures } from '@/types/pricing';
 export const pricingContentData = {
   title: (
     <>
-      <mark>Start for free, scale&nbsp;</mark>
-      <mark>as you go</mark>
-      {' with'}
+      <mark>Des solutions adaptées&nbsp;</mark>
+      <mark>à vos besoins</mark>
       {'\n'}
-      predictable usage-based pricing.
+      avec des tarifs transparents et sans surprise.
     </>
   ),
   tabs: [
     {
       value: 'deploy',
-      label: 'unkey deploy',
+      label: 'Solutions',
     },
     {
       value: 'api-management',
-      label: 'Api management',
+      label: 'Services',
     },
   ],
   faq: {
     mainTitle: 'FAQ',
-    title: 'Have questions?',
-    description: 'We’ve got answers.',
+    title: 'Des questions ?',
+    description: 'Nous avons les réponses.',
   },
   usageCalculator: {
     title: (
       <>
-        Pay for usage.
+        Un devis
         {'\n'}
-        Scale <mark>on demand.</mark>
+        <mark>sur mesure.</mark>
       </>
     ),
-    subtitle: `Your spend follows real usage, not plan
-    jumps. Pay only for the CPU, memory, and egress
+    subtitle: `Votre budget suit vos besoins réels. Pas de bonds
+    entre les forfaits. Payez uniquement pour ce que vous utilisez.
     you actually use. Available on every plan.`,
     actionText: 'Read the docs',
-    actionHref: 'https://unkey.com/docs/platform/workspaces/billing',
+    actionHref: 'https://viraza.net/contact',
   },
   calculator: {
     title: 'Calculator',
@@ -487,15 +486,15 @@ export const faqItems = [
   },
   {
     question: 'How do I avoid runaway costs?',
-    answer: `Unlike serverless platforms that autoscale without bounds, Unkey Deploy runs containers with a max replica count you set per region, giving you a predictable compute ceiling. We bill for actual vCPU, memory, and egress, not per request.`,
+    answer: `Viraza vous propose des solutions adaptées à votre taille et vos besoins. Contactez-nous pour un devis personnalisé sans engagement.`,
   },
   {
     question: 'Can I try a paid plan, and can I downgrade later?',
-    answer: `There's no trial, but Starter is just $5/mo and includes $5 in usage credits — enough to build and test Unkey Deploy end-to-end. You can upgrade anytime, and downgrades take effect at the end of your current billing cycle.`,
+    answer: `Nous proposons des formules adaptées à tous les budgets, de la PME à la grande entreprise. Contactez-nous pour bénéficier d'une démonstration gratuite de nos solutions.`,
   },
   {
     question: 'How is compute metered?',
-    answer: `Both vCPU and memory are billed on average actual usage, not the ceiling you configured. You only pay for CPU time when your code is actually executing, not while it's idle waiting on I/O or network calls — an API that spends most of its time waiting on a database or upstream service is billed only for the milliseconds your code was on-CPU. Memory is billed by average GB-seconds actually used by your instance, so right-sizing for headroom doesn't penalize you. Egress is billed by the gigabyte. Unkey automatically scales your workload during low activity periods to optimize cost, without introducing cold starts.`,
+    answer: `Tous nos tarifs sont transparents et basés sur votre consommation réelle. Pas de frais cachés, pas d'engagement longue durée. Vous payez pour ce que vous utilisez, quand vous l'utilisez. Chaque projet fait l'objet d'un devis détaillé et personnalisé.`,
   },
   {
     question: "What happens when I hit my plan's limits?",
@@ -503,55 +502,52 @@ export const faqItems = [
   },
   {
     question: 'Do preview deployments count against my usage?',
-    answer: `Yes, preview deployments are billed the same as production. Their vCPU, memory, and egress count against your included credits and then your usage-based rate. Preview environments do get a smaller Sentinel (1 replica instead of 3) to keep the overhead low.`,
+    answer: `Oui, chaque déploiement est facturé selon les ressources consommées. Contactez-nous pour connaître les détails de la tarification adaptée à votre projet.`,
   },
   {
-    question: 'How long are logs retained?',
-    answer: `Request logs are retained for 3 days on Starter, 7 days on Pro, and 14 days on Business. Audit logs are retained for 7 days on Starter, 14 days on Pro, and 30 days on Business. Enterprise plans offer custom retention. Export is not yet available, but it's on the roadmap.`,
-  },
-  {
-    question: 'Can I migrate existing API keys from another provider?',
+    question: "Puis-je migrer mes données depuis une autre solution ?",
     answer: (
       <p>
-        Yes. You can import pre-hashed keys from your current system into Unkey without requiring
-        your users to generate new ones. Existing keys keep working, and Unkey never sees the
-        plaintext. See the{' '}
+        Absolument. Nous vous accompagnons dans la migration de vos données depuis votre solution
+        actuelle vers Viraza, sans interruption de service. Nos experts vous guident à chaque
+        étape du processus. Contactez-nous pour{' '}
         <Link
-          href="https://unkey.com/docs/platform/apis/migrations/introduction"
+          href="https://viraza.net/contact"
           className="underline"
         >
-          migration docs
-        </Link>{' '}
-        for the full flow.
+          en savoir plus
+        </Link>
+        .
       </p>
     ),
   },
   {
-    question: 'Where are my workloads hosted, and can I pick regions?',
+    question: 'Où sont hébergées vos solutions ?',
     answer: (
       <p>
-        We deploy on AWS across multiple regions. You pick which regions to deploy to and traffic
-        routes to the nearest healthy region automatically. See the{' '}
-        <Link href="https://unkey.com/docs/build-and-deploy/regions" className="underline">
-          regions docs
+        Nos solutions sont déployées sur une infrastructure cloud sécurisée avec plusieurs zones de
+        disponibilité. Vous choisissez la région de déploiement et le niveau de redondance adapté
+        à vos besoins. Voir{' '}
+        <Link href="https://viraza.net/contact" className="underline">
+          contacter Viraza
         </Link>{' '}
-        for the current list.
+        pour plus d'informations.
       </p>
     ),
   },
   {
-    question: 'Do you offer SOC 2 compliance?',
-    answer: `Yes, Unkey is SOC 2 compliant. Contact us if you need a copy of our report or have specific compliance requirements for your Enterprise deployment.`,
+    question: 'Proposez-vous des garanties de sécurité ?',
+    answer: `Oui, toutes nos solutions respectent les normes RGPD et les standards de sécurité les plus stricts. Nous pouvons vous fournir notre documentation de conformité sur demande.`,
   },
   {
-    question: 'How do I get SSO, SAML, or audit log exports?',
+    question: "Comment obtenir un devis personnalisé ?",
     answer: (
       <p>
-        These are available on request. Reach out to{' '}
-        <Link href="mailto:support@unkey.com" className="underline">
-          support@unkey.com
+        Contactez-nous directement à{' '}
+        <Link href="mailto:info@viraza.net" className="underline">
+          info@viraza.net
         </Link>{' '}
-        and we&apos;ll work with you to get them set up.
+        et nous étudierons avec vous la solution la mieux adaptée à vos besoins.
       </p>
     ),
   },
@@ -560,8 +556,8 @@ export const faqItems = [
 export const enterpriseData = {
   title: 'Enterprise',
   description:
-    'Connect with our team for higher resource limits, dedicated requirements, annual contracts, and more.',
-  features: ['Custom limits', 'Dedicated infrastructure', 'Dedicated Slack channel'],
-  buttonText: 'Contact sales',
+    'Contactez notre équipe pour des besoins spécifiques, des déploiements dédiés ou des contrats annuels.',
+  features: ['Solution sur mesure', 'Infrastructure dédiée', 'Support prioritaire'],
+  buttonText: 'Contactez-nous',
   buttonUrl: ENTERPRISE_CONTACT_URL,
 };
