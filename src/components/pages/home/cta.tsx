@@ -1,39 +1,71 @@
+import Image from 'next/image';
+
 import { cn } from '@/lib/utils';
-import NextLink from 'next/link';
+import { BackgroundVideo } from '@/components/ui/background-video';
+import { TrackingLink } from '@/components/ui/tracking-link';
 
 interface ICtaProps {
   heading: string;
   subheading: string;
   buttonLabel: string;
   buttonHref: string;
+  poster: string;
+  videos: { src: string; type: string }[];
   className?: string;
 }
 
-function Cta({ heading, subheading, buttonLabel, buttonHref, className }: ICtaProps) {
+export default function Cta({
+  heading,
+  subheading,
+  buttonLabel,
+  buttonHref,
+  poster,
+  videos,
+  className,
+}: ICtaProps) {
   return (
-    <section className={cn('relative w-full py-20 md:py-28', className)}>
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald/5 to-transparent" aria-hidden />
-      <div className="container relative z-10">
-        <div className="mx-auto max-w-3xl rounded-2xl border border-emerald/20 bg-gradient-to-b from-emerald/10 to-emerald/5 p-12 text-center md:p-16">
-          <h2 className="font-display text-3xl leading-[1.125] text-balance text-white sm:text-4xl md:text-[2.5rem]">
-            {heading}
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">
-            {subheading}
-          </p>
-          <NextLink
-            href={buttonHref}
-            className="mt-8 inline-flex items-center gap-2 rounded-lg bg-emerald px-8 py-3.5 text-sm font-medium text-white transition-all hover:bg-emerald-2 hover:shadow-lg hover:shadow-emerald/25"
-          >
-            {buttonLabel}
-            <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </NextLink>
-        </div>
+    <section
+      className={cn(
+        'relative h-[clamp(26.25rem,94vw,28.75rem)] overflow-hidden bg-panel sm:h-[31.25rem] md:h-130 lg:h-[32.5rem] xl:h-[34.125rem]',
+        className,
+      )}
+    >
+      {/*
+          ffmpeg parameters (native 1920×546, 8-bit yuv420p to avoid green tint):
+          mp4: ffmpeg -y -i input.mov -c:v libx265 -crf 22 -pix_fmt yuv420p -preset veryslow -tag:v hvc1 -movflags faststart -an cta.mp4
+          webm: ffmpeg -y -i input.mov -c:v libsvtav1 -crf 32 -pix_fmt yuv420p -svtav1-params preset=3:lookahead=80:keyint=80 -an cta.webm
+      */}
+
+      <Image
+        src={poster}
+        alt=""
+        fill
+        quality={95}
+        sizes="(max-width: 640px) 960px"
+        className="pointer-events-none absolute inset-0 z-0 object-cover sm:hidden"
+      />
+
+      <BackgroundVideo
+        poster={poster}
+        videos={videos}
+        deferLoad
+        rootMargin="200px"
+        sourceMedia="(min-width: 640px)"
+        className="pointer-events-none absolute inset-0 z-0 hidden h-full w-full object-cover sm:block"
+      />
+      <div className="relative z-10 container flex h-full flex-col pt-12 pb-10 sm:pt-14 sm:pb-11 md:pt-16 md:pb-12.75 lg:pb-14 xl:pb-12.75">
+        <h2 className="max-w-144 font-display text-2xl leading-[1.125] text-white sm:text-[1.875rem] md:text-[2rem]">
+          {heading} <span className="text-gray-60 min-[480px]:block">{subheading}</span>
+        </h2>
+        <TrackingLink
+          href={buttonHref}
+          className="mt-auto w-fit lg:mt-13 xl:mt-auto"
+          trackEvent="sign up"
+          trackProperties={{ location: 'CTA' }}
+        >
+          {buttonLabel}
+        </TrackingLink>
       </div>
     </section>
   );
 }
-
-export default Cta;

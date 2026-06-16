@@ -27,7 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     // suppressHydrationWarning added according to https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
-    <html lang="fr" className="dark" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
+      <head>
+        <link rel="preconnect" href="https://use.typekit.net" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://p.typekit.net" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="https://use.typekit.net/af/2c0cee/000000000000000077524f49/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://use.typekit.net/tcb4uyw.css" />
+      </head>
       <body
         className={`bg-background ${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >

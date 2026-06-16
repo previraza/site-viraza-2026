@@ -3,7 +3,7 @@ import config from '@/configs/website-config';
 
 import { toAbsoluteSiteUrl } from '@/lib/site-url';
 
-// Pass `title` → "{title} | Viraza". Pass `tagline` (hero pages) → "Viraza | {tagline}".
+// Pass `title` → "{title} | Unkey". Pass `tagline` (hero pages) → "Unkey | {tagline}".
 type Metadata = {
   title?: string;
   tagline?: string;
@@ -25,7 +25,7 @@ export function getMetadata({
 }: Metadata) {
   const canonicalUrl = toAbsoluteSiteUrl(pathname);
   const imageUrl = imagePath.startsWith('http') ? imagePath : toAbsoluteSiteUrl(imagePath);
-  const siteName = 'Viraza';
+  const siteName = `${config.projectName.slice(0, 1).toUpperCase()}${config.projectName.slice(1)}`;
   const fullTitle = tagline ? `${siteName} | ${tagline}` : `${title} | ${siteName}`;
 
   return {

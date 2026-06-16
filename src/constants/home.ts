@@ -1,169 +1,361 @@
+import { createElement, Fragment } from 'react';
+import buildDeployConnectImage from '@/assets/images/home/build-deploy/connect.png';
+import buildDeployDeployImage from '@/assets/images/home/build-deploy/deploy.png';
+import buildDeployPreviewImage from '@/assets/images/home/build-deploy/preview.png';
+import buildDeployShipImage from '@/assets/images/home/build-deploy/ship.png';
+import buildDeployValidateImage from '@/assets/images/home/build-deploy/validate.png';
+import ctaPosterImage from '@/assets/images/home/cta/poster.jpg';
+import gatewayAuthDepthImage from '@/assets/images/home/gateway/auth-depth.png';
+import heroPosterImage from '@/assets/images/home/hero/hero-poster.png';
+import observeDashImage from '@/assets/images/home/observe/dash.png';
+import portalDocsImage from '@/assets/images/home/portal/docs.png';
+import portalKeysImage from '@/assets/images/home/portal/keys.png';
+import portalZeroImage from '@/assets/images/home/portal/zero.png';
 import { APP_URL, GITHUB_URL, SIGN_UP_URL } from '@/configs/website-config';
+import { buildDeployTechnologyLogos, homePortfolioLogos } from '@/constants/logos';
+import { Alignment, Fit } from '@rive-app/react-canvas';
 
 export const homeHeaderLinks = {
   social: [
-    { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/virazait' },
-    { id: 'github', label: 'GitHub', href: GITHUB_URL },
+    { id: 'discord', label: 'Discord', href: 'https://unkey.com/discord' },
+    { id: 'github', label: 'GitHub', href: GITHUB_URL, metric: '5.3k' },
   ],
   auth: [
-    { id: 'contact', label: 'Contact', href: '/contact' },
-    { id: 'rendezvous', label: 'Prenez rendez-vous', href: SIGN_UP_URL },
+    { id: 'login', label: 'Login', href: APP_URL },
+    { id: 'signUp', label: 'Sign Up', href: SIGN_UP_URL },
   ],
 } as const;
 
 export const homeContentData = {
   hero: {
-    title: 'Digitalisez votre entreprise\navec Viraza',
+    title: 'The Developer Platform for Modern APIs',
     description:
-      'Votre partenaire pour la transformation digitale en RDC. Donnez un coup d\'accélérateur à votre entreprise grâce à nos solutions digitales innovantes.',
-    primaryCta: { label: 'Découvrir nos solutions', href: '/#services' },
-    secondaryCta: { label: 'Nous contacter', href: '/contact' },
-    poster: { src: '', width: 1533, height: 908 },
-    videos: [],
-    logos: [],
+      'Unkey unifies your infrastructure. Deploy APIs instantly, route traffic through global gateways, and understand usage in one place.',
+    primaryCta: { label: 'Start for free', href: APP_URL },
+    secondaryCta: { label: 'View on GitHub', href: GITHUB_URL },
+    poster: { src: heroPosterImage.src, width: 1533, height: 908 },
+    videos: [
+      { src: '/videos/home/hero-av1.mp4', type: 'video/mp4; codecs=av01' },
+      { src: '/videos/home/hero.mp4', type: 'video/mp4; codecs=hvc1' },
+      { src: '/videos/home/hero.webm', type: 'video/webm' },
+    ],
+    logos: homePortfolioLogos,
   },
-  services: {
-    heading: 'Nos services',
-    subheading: 'CE QUE NOUS FAISONS',
-    description: 'Nous fournissons un service exclusif pour votre entreprise avec des solutions technologiques de pointe.',
-    link: { label: 'Voir tous les services', href: '/contact' },
+  controlPlane: {
+    heading: createElement(
+      Fragment,
+      null,
+      'Unify your fragmented API stack with a single control plane for\n',
+      createElement('mark', null, 'access and traffic.'),
+    ),
+    description:
+      'Stop assembling your API stack piece by piece. Running APIs at scale usually means juggling hosting, gateways, rate limits, and monitoring across multiple vendors.',
+    riveDefaults: {
+      src: '/rive/home/control-plane/control-plane.riv',
+      fonts: {
+        urls: {
+          regular: '/rive/home/JetBrainsMono-Regular.ttf',
+          medium: '/rive/home/JetBrainsMono-Medium.ttf',
+        },
+      },
+      alignment: Alignment.Center,
+      fit: Fit.Cover,
+    },
+    cards: [
+      {
+        id: 'branch',
+        title: 'Branch Overview',
+        body: 'Faster to ship. Go from code to running API in minutes. Test safely, promote when ready, roll back if needed.',
+        rive: {
+          artboard: 'branch',
+        },
+      },
+      {
+        id: 'keys',
+        title: 'Manage API Keys',
+        body: 'Safer by default. Protect every endpoint with keys, rate limits, and instant access revocation out of the box.',
+        rive: {
+          artboard: 'api',
+          autoBind: false,
+        },
+      },
+      {
+        id: 'control',
+        title: 'Control Plane',
+        body: 'Simpler to run. One single unified platform for deployments, gateways, and full observability.',
+        rive: {
+          artboard: 'control',
+          autoBind: false,
+        },
+      },
+      {
+        id: 'usage',
+        title: 'Usage 30 Days',
+        body: 'Visible from day one. Every request logged. Every decision tracked. Debug issues before users notice.',
+        rive: {
+          artboard: 'usage',
+          autoBind: false,
+        },
+      },
+    ],
+  },
+  buildDeploy: {
+    heading: 'Deploy in minutes. Roll back in seconds. Ship with confidence at any scale.',
+    description:
+      'Infrastructure that moves with your code. Review changes in preview, then promote the exact version you tested.',
+    panels: [
+      {
+        id: 'connect',
+        tabLabel: 'Connect',
+        title: 'Connect a repo and push code',
+        subtitle: 'Git-based deploys, zero setup',
+        body: 'Link your Git repository once and deploy automatically on every push. No complex pipelines or manual steps needed.',
+        image: buildDeployConnectImage.src,
+      },
+      {
+        id: 'deploy',
+        tabLabel: 'Deploy',
+        title: 'Deploy Docker containers',
+        subtitle: 'Any language, any framework',
+        body: 'Run real containers that stay online, keeping the serverless feel while avoiding short-lived runtimes.',
+        image: buildDeployDeployImage.src,
+        hasLogos: true,
+        logos: buildDeployTechnologyLogos,
+      },
+      {
+        id: 'preview',
+        tabLabel: 'Preview',
+        title: 'Previews for every commit',
+        subtitle: 'Test every commit before it ships',
+        body: 'Test changes in a separate environment, then promote when the results look right.',
+        image: buildDeployPreviewImage.src,
+      },
+      {
+        id: 'ship',
+        tabLabel: 'Ship',
+        title: 'Ship immutable versions',
+        subtitle: 'Instant rollbacks, no guesswork',
+        body: 'Keep releases safe with fast rollback paths, switch back instantly without redeploying. The previous production instance stays running for 30 minutes.',
+        image: buildDeployShipImage.src,
+      },
+      {
+        id: 'validate',
+        tabLabel: 'Validate',
+        title: 'Validate releases automatically',
+        subtitle: 'Branch protection & OpenAPI checks',
+        body: 'Make it really hard to ship broken APIs. OpenAPI diffs automatically flag breaking changes before they hit production.',
+        image: buildDeployValidateImage.src,
+        textTopClass: 'lg:pt-[7.875rem]',
+      },
+    ],
+  },
+  gateway: {
+    heading:
+      'Protect and control traffic at the edge. Offload access control and rate limiting to global gateways.',
+    riveDefaults: {
+      autoBind: true,
+      alignment: Alignment.BottomCenter,
+    },
+    cards: [
+      {
+        title: 'Auth + Keys',
+        body: 'Manage API keys end to end and control who can call what.',
+        webgl: {
+          imageSrc: gatewayAuthDepthImage.src,
+          appearanceEffect: 'natural' as const,
+          matrixCharSize: 12,
+          backgroundCharSize: 85,
+          backgroundColor: '#040406',
+          backgroundCharColor: '#878787',
+          objectColor1: '#bababa',
+          objectColor2: '#bababa',
+          objectColor3: '#bababa',
+          depthIntensity: 4,
+          symbolBalance: 21,
+          blackPoint: 8,
+        },
+        useTextBackground: true,
+        textWidthClass: 'max-w-88',
+        gridClassName:
+          'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-1 xl:col-start-1 xl:row-start-1',
+      },
+      {
+        title: 'Global platform',
+        body: 'Edge gateway enforces access and routes requests to the closest instance for low latency.',
+        rive: {
+          src: '/rive/home/gateway/global-platform.riv',
+          fonts: { urls: { regular: '/rive/home/JetBrainsMono-Regular.ttf' } },
+          fit: Fit.Cover,
+          alignment: Alignment.TopCenter,
+        },
+        textWidthClass: 'max-w-90',
+        gridClassName:
+          'aspect-[505/902] sm:aspect-auto sm:h-auto sm:min-h-0 sm:col-start-2 sm:row-start-1 sm:row-span-2 xl:col-start-2 xl:row-span-2',
+      },
+      {
+        title: 'Rate limits',
+        body: 'Set limits per IP, user, or key and enforce them close to your users.',
+        rive: {
+          src: '/rive/home/gateway/rate-limits.riv',
+          fonts: { urls: { regular: '/rive/home/JetBrainsMono-Regular.ttf' } },
+        },
+        gridClassName:
+          'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-2 xl:col-start-1 xl:row-start-2',
+      },
+      {
+        title: 'Validation',
+        body: 'Enforce request rules early to catch bad traffic before it hits your API.',
+        rive: {
+          src: '/rive/home/gateway/validation.riv',
+          stateMachines: 'State Machine 1',
+        },
+        gridClassName:
+          'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-3 xl:col-start-3 xl:row-start-1',
+      },
+      {
+        title: 'Analytics',
+        body: 'Access real-time insights into your API usage without adding custom instrumentation.',
+        rive: {
+          src: '/rive/home/gateway/analytics.riv',
+          autoBind: false,
+        },
+        textWidthClass: 'max-w-96',
+        gridClassName:
+          'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-2 sm:row-start-3 xl:col-start-3 xl:row-start-2',
+      },
+    ],
+  },
+  production: {
+    label: 'Built for production',
     items: [
       {
-        icon: '/icons/header/glossary.svg',
-        title: 'Web Development',
-        description: 'Sites web et applications sur mesure avec React, Next.js, Tailwind CSS pour des performances optimales.',
+        title: 'High availability',
+        text: 'Unkey deploys multiple replicas in different availability zones so your app survives during outages.',
       },
       {
-        icon: '/icons/header/blog.svg',
-        title: 'UI/UX Design',
-        description: 'Interfaces intuitives et attractives qui reflètent votre identité de marque et captivent votre audience.',
-      },
-      {
-        icon: '/icons/header/changelog.svg',
-        title: 'Digital Marketing',
-        description: 'Stratégies omnicanales pour maximiser votre présence en ligne et générer plus de trafic ciblé.',
-      },
-      {
-        icon: '/icons/header/case-studies.svg',
-        title: 'Business Analysis',
-        description: 'Analyse approfondie de votre secteur pour identifier les opportunités de croissance.',
-      },
-      {
-        icon: '/icons/header/glossary.svg',
-        title: 'Cloud Services',
-        description: 'Infrastructure cloud scalable pour une infrastructure IT résiliente et performante.',
-      },
-      {
-        icon: '/icons/header/blog.svg',
-        title: 'IT Consulting',
-        description: 'Accompagnement stratégique pour définir votre feuille de route digitale.',
+        title: 'Proactive protection',
+        text: "Take immediate control over your system's security with the ability to instantly revoke access, providing swift response to potential threats.",
       },
     ],
   },
-  products: {
-    heading: 'Nos solutions',
-    subheading: 'PRODUITS',
-    description: 'Des innovations technologiques conçues pour transformer l\'éducation et les services publics en RDC.',
-    items: [
-      {
-        title: 'MyEduc',
-        tagline: 'Plateforme de gestion scolaire nouvelle génération',
-        description: 'Solution complète de gestion scolaire pour l\'enseignement supérieur et secondaire. MyEduc digitalise l\'ensemble des processus administratifs, pédagogiques et financiers des établissements éducatifs.',
-        features: ['Gestion des inscriptions et scolarité', 'Suivi pédagogique et notes', 'Paiements en ligne', 'Communication parents-école', 'Tableaux de bord analytiques'],
-        gradient: 'from-emerald to-teal',
-      },
-      {
-        title: 'SNEN',
-        tagline: 'Système de Numérisation de l\'Enseignement National',
-        description: 'Plateforme nationale de digitalisation du système éducatif. SNEN permet au ministère de l\'enseignement de centraliser, suivre et analyser les données de tous les établissements du pays.',
-        features: ['Cartographie des établissements', 'Suivi des effectifs', 'Gestion des enseignants', 'Statistiques nationales', 'Rapports automatisés'],
-        gradient: 'from-blue-500 to-cyan-500',
-      },
-      {
-        title: 'Syrcow',
-        tagline: 'Écosystème de solutions connectées',
-        description: 'Plateforme mutualisée de services et d\'applications interconnectés. Syrcow fédère l\'ensemble des outils et services numériques de l\'écosystème Viraza en une expérience unifiée.',
-        features: ['Interconnexion des services', 'API unifiée', 'Authentification centralisée', 'Monitoring en temps réel', 'Scalabilité horizontale'],
-        gradient: 'from-purple-500 to-pink-500',
-      },
-      {
-        title: 'SRIP & SYPROC',
-        tagline: 'Solutions gouvernementales',
-        description: 'Système de Recensement et d\'Identification de la Population (SRIP) et Système de Pilotage des Ressources Opérationnelles et Commerciales (SYPROC). Des solutions sur mesure pour l\'administration publique.',
-        features: ['Recensement biométrique', 'Gestion des ressources', 'Pilotage opérationnel', 'Rapports gouvernementaux', 'Sécurité des données'],
-        gradient: 'from-amber-500 to-orange-500',
-      },
-    ],
-  },
-  whyUs: {
-    heading: 'Pourquoi nous choisir',
-    subheading: '5+ ANS D\'EXPÉRIENCE',
-    description: 'Plus de 5 ans d\'expérience à offrir des services informatiques de qualité en RD Congo.',
-    stats: [
-      { value: '96+', label: 'Projets terminés' },
-      { value: '99%', label: 'Clients satisfaits' },
-      { value: '10+', label: 'Experts qualifiés' },
-      { value: '6+', label: 'Prix honorables' },
-    ],
+  scale: {
+    heading: createElement(
+      Fragment,
+      null,
+      'Start small, scale to global traffic, and ',
+      createElement('mark', null, 'stay protected'),
+      ' without managing infrastructure manually.',
+    ),
+    description:
+      'Platform that scales with you. Control, routing, and traffic handling are designed for multi-region from day one.',
+    buttonLabel: 'Read the docs',
+    buttonHref: 'https://unkey.com/docs/build-and-deploy/regions',
+    riveDefaults: {
+      src: '/rive/home/scale/icons.riv',
+      fit: Fit.Cover,
+      alignment: Alignment.Center,
+    },
     features: [
       {
-        title: 'Croissance de l\'entreprise',
-        description: 'Transférez efficacement les idées phares avant leur commercialisation avec notre accompagnement stratégique.',
+        title: 'Multi-region routing',
+        text: 'Route requests to the nearest region for consistently low latency.',
+        rive: {
+          artboard: 'main 1',
+        },
       },
       {
-        title: 'Produits de qualité',
-        description: 'Des solutions robustes et évolutives, développées avec les meilleures technologies du marché.',
+        title: 'Automatic scaling',
+        text: 'Capacity follows demand, with no knobs to babysit and no manual ops.',
+        rive: {
+          artboard: 'main 2',
+        },
       },
       {
-        title: 'Support 24/7',
-        description: 'Une équipe dédiée disponible à tout moment pour vous accompagner et résoudre vos problèmes.',
+        title: 'Predictable pricing',
+        text: "Start free, then scale up when you're ready and keep billing predictable as you grow.",
+        rive: {
+          artboard: 'main 3',
+        },
       },
       {
-        title: 'Sécurité de haut niveau',
-        description: 'Protection maximale de vos données avec des protocoles de sécurité avancés et une infrastructure sécurisée.',
+        title: 'Built-in protection',
+        text: 'Lock down access with API keys, edge rate limits, and instant revoke controls.',
+        rive: {
+          artboard: 'main 4',
+        },
       },
     ],
   },
-  process: {
-    heading: 'Notre processus',
-    subheading: 'COMMENT NOUS PROCÉDONS',
-    description: 'Une méthodologie éprouvée pour garantir le succès de vos projets.',
-    steps: [
+  observe: {
+    heading: 'Stay in sync with your traffic in real time.',
+    subheading: 'Every request is logged. Every decision is visible.',
+    riveDefaults: {
+      src: '/rive/home/observe/observe.riv',
+      alignment: Alignment.BottomCenter,
+    },
+    mobileImage: observeDashImage.src,
+    buttonLabel: 'Read the docs',
+    buttonHref: 'https://unkey.com/docs/observability/overview',
+    columns: [
       {
-        number: '01',
-        title: 'Sélection du projet',
-        description: 'Nous analysons vos besoins et définissons ensemble le périmètre du projet pour garantir une collaboration réussie.',
+        lead: 'Automatic logs and metrics collection.',
+        rest: 'Captures verifications, rate limits, audit logs, HTTP request/response logs, and much more automatically.',
       },
       {
-        number: '02',
-        title: 'Analyse du projet',
-        description: 'Étude approfondie des exigences techniques et fonctionnelles pour concevoir une solution adaptée.',
+        lead: 'Spot spikes and unusual patterns.',
+        rest: 'Use metrics to flag anomalies, errors, and performance issues — and feed signals into your alerting stack.',
       },
       {
-        number: '03',
-        title: 'Plan et exécution',
-        description: 'Mise en œuvre agile avec des livraisons itératives pour un contrôle qualité optimal.',
+        lead: 'Debug and explore in the dashboard.',
+        rest: 'Filter by deployment, user, region, custom tags, and status to quickly understand what’s going on.',
       },
       {
-        number: '04',
-        title: 'Livraison du résultat',
-        description: 'Déploiement, formation et accompagnement post-livraison pour assurer votre autonomie.',
+        lead: 'Query via API, from your own systems.',
+        rest: 'Run analytics queries over your verification data via the HTTP API from your stack.',
+      },
+    ],
+  },
+  portal: {
+    heading: 'First-class developer experience for your users.',
+    subheading: 'API keys, usage, and docs—ready out of the box.',
+    buttonLabel: 'Coming soon',
+    buttonHref: '',
+    cards: [
+      {
+        text: 'Zero code required. A fully hosted developer portal with nothing to build or maintain.',
+        graphic: portalZeroImage.src,
+        textWidthClass: 'max-w-[23.375rem]',
+      },
+      {
+        text: 'Beautiful API docs. OpenAPI-generated documentation, hosted by Unkey and always in sync.',
+        graphic: portalDocsImage.src,
+        textWidthClass: 'max-w-[25.6875rem]',
+      },
+      {
+        text: 'Keys and usage, self-serve. Users manage their API keys and view usage without support requests.',
+        graphic: portalKeysImage.src,
+        textWidthClass: 'max-w-[25.5625rem]',
       },
     ],
   },
   cta: {
-    heading: 'Prêt à digitaliser votre entreprise ?',
-    subheading: 'Contactez-nous dès aujourd\'hui pour une consultation gratuite.',
-    buttonLabel: 'Contactez-nous',
-    buttonHref: '/contact',
+    heading: 'Turn your API stack into one workflow.',
+    subheading: 'Start for free, integrate in minutes, and scale when you need to.',
+    buttonLabel: 'Start for free',
+    buttonHref: APP_URL,
+    poster: ctaPosterImage.src,
+    videos: [
+      { src: '/videos/home/cta.mp4', type: 'video/mp4; codecs=hvc1' },
+      { src: '/videos/home/cta.webm', type: 'video/webm' },
+    ],
   },
 };
 
 export const homePageData = {
   pathname: '/',
   metadata: {
-    tagline: 'Transformation Digitale en RDC',
-    description: 'Viraza IT Solutions - Votre partenaire pour la transformation digitale en RDC. Solutions innovantes pour accélérer votre croissance.',
+    tagline: 'The Developer Platform for Modern APIs',
+    description: 'Unkey brings API deployment, gateways, and observability into one platform.',
     pathname: '/',
   },
 };

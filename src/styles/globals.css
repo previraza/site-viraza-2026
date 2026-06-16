@@ -35,17 +35,13 @@
   --color-background: #040406;
   --color-foreground: #ffffff;
 
-  --color-emerald: #10b981;
-  --color-emerald-2: #34d399;
-  --color-emerald-3: #6ee7b7;
-  --color-emerald-glow: #065f46;
-  --color-emerald-dot: #10b981;
+  --color-blue: #2d46c5;
+  --color-blue-2: #3756f3;
 
-  --color-teal: #14b8a6;
-  --color-teal-2: #2dd4bf;
+  --color-orange: #f5841f;
+  --color-orange-2: #ffb12a;
 
-  --color-yellow: #fbbf24;
-  --color-yellow-glow: #92400e;
+  --color-yellow: #def135;
 
   --color-gray-98: #f9fafb;
   --color-gray-94: #eeeff1;
@@ -75,20 +71,20 @@
   --color-popover-foreground: hsl(0 0% 98%);
 
   /* ui/button, ui/tooltip, content/card, content/table, header/mobile-menu, styles/typography */
-  --color-primary: hsl(160 84% 39%);
-  --color-primary-foreground: hsl(0 0% 100%);
+  --color-primary: hsl(217 91% 60%);
+  --color-primary-foreground: hsl(240 5.9% 10%);
 
   /* ui/badge, ui/button, ui/checkbox, ui/sheet, content/accordion, content/blockquote,
      content/details, content/file-system, content/table, pages/authors, styles/typography */
-  --color-secondary: hsl(160 60% 12%);
+  --color-secondary: hsl(240 4% 16%);
   --color-secondary-foreground: hsl(0 0% 98%);
 
   /* ui/*, content/*, header/*, footer/*, pages/*, styles/typography */
-  --color-muted: hsl(160 30% 10%);
-  --color-muted-foreground: hsl(160 10% 60%);
+  --color-muted: hsl(240 3.7% 15.9%);
+  --color-muted-foreground: hsl(240 5% 64.9%);
 
   /* ui/button, ui/dialog, ui/select */
-  --color-accent: hsl(160 60% 12%);
+  --color-accent: hsl(240 3.7% 15.9%);
   --color-accent-foreground: hsl(0 0% 98%);
 
   /* ui/button, ui/form */
@@ -96,20 +92,22 @@
   --color-destructive-foreground: hsl(0 0% 98%);
 
   /* ui/input, ui/textarea, focus ring */
-  --color-border: hsl(160 30% 16%);
-  --color-input: hsl(160 30% 12%);
-  --color-ring: hsl(160 80% 60%);
+  --color-border: hsl(240 4% 16%);
+  --color-input: hsl(240 3.7% 15.9%);
+  --color-ring: hsl(215 90% 81%);
 
   /* Refactor (legacy colors kept intentionally) */
   --color-panel: #121318;
   --color-muted-5: #5e616e;
+  --color-cyan: #35f1e4;
   --color-blue-glow: #0095e6;
   --color-blue-dot: #3580f1;
+  --color-yellow-glow: #c29500;
   --color-orange-glow: #a15728;
   --color-purple-glow: #6100c2;
   --color-purple-dot: #b061ff;
-  --color-green-glow: #10b981;
-  --color-green-dot: #34d399;
+  --color-green-glow: #45b36e;
+  --color-green-dot: #00ff5e;
   --color-red-glow: #b63524;
   --color-red-dot: #ff573d;
   --color-lightblue-glow: #14289d;

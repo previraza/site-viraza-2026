@@ -1,8 +1,8 @@
 export const blogContentData = {
   hero: {
-    title: `Actualités technologiques,\n insights et innovations`,
-    description: `Restez informé des dernières tendances en transformation digitale,
-          développement web, et innovations technologiques. Découvrez nos
-          analyses et retours d'expérience du secteur IT en RDC.`,
+    title: `How to ship, protect,\nand scale modern APIs`,
+    description: `Stay updated with engineering deep-dives, product updates, API
+          tutorials, and best practices from the Unkey team — helping
+          developers build, secure, and scale APIs with confidence.`,
   },
 };
