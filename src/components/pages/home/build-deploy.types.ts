@@ -8,6 +8,7 @@ export interface IBuildDeployPanel {
   hasLogos?: boolean;
   logos?: { alt: string; src: string; width: number; height: number; className: string }[];
   textTopClass?: string;
+  cta?: { label: string; href: string };
 }
 
 export interface IBuildDeployProps {

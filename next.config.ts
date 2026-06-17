@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
       'motion',
       'shiki',
     ],
+    turbopackFileSystemCacheForDev: true, 
+    turbopackFileSystemCacheForBuild: true, 
   },
+  allowedDevOrigins: ['172.22.211.229'],
   outputFileTracingExcludes: {
     '*': [
       'next.config.ts',

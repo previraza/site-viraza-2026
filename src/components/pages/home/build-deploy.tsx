@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
@@ -30,6 +31,17 @@ function Panel({ row, isLast }: { row: IBuildDeployPanel; isLast: boolean }) {
             <p className="max-w-md text-[0.9375rem] leading-snug text-gray-90 sm:text-base">
               {row.body}
             </p>
+            {row.cta && (
+              <Link
+                href={row.cta.href}
+                className="mt-4 inline-flex w-fit items-center gap-2 rounded-lg border border-gray-30 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:border-gray-60 hover:bg-gray-20"
+              >
+                {row.cta.label}
+                <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            )}
           </div>
 
           {row.hasLogos && row.logos && (
@@ -78,7 +90,7 @@ export default function BuildDeploy({ heading, description, panels }: IBuildDepl
     <section className="pt-20 md:pt-30 xl:pt-45">
       <div className="container">
         <div className="pt-8 md:pt-12 xl:pt-20">
-          <Label>Build & Deploy</Label>
+          <Label>Produits & Services</Label>
         </div>
 
         <div>
