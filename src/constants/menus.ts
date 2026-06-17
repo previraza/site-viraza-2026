@@ -36,6 +36,7 @@ export const MENUS = {
         },
       ],
     },
+    { label: 'Projects', href: '/projects' },
     { label: 'Pricing', href: '/pricing' },
           { label: 'Docs', href: 'https://viraza.net/docs' },
   ],
@@ -56,6 +57,7 @@ export const MENUS = {
         title: 'Resources',
         items: [
           { label: 'Blog', href: '/blog' },
+          { label: 'Projects', href: '/projects' },
           { label: 'Changelog', href: '/changelog' },
     { label: 'Docs', href: 'https://viraza.net/docs' },
           { label: 'Glossary', href: '/glossary' },
