@@ -1,6 +1,6 @@
 export const APP_URL = 'https://viraza.net/';
 export const SIGN_UP_URL = 'https://viraza.net/contact';
-export const GITHUB_URL = 'https://github.com/virazait';
+export const GITHUB_URL = 'https://github.com/previraza';
 export const BOOK_A_CALL_URL = 'https://viraza.net/contact';
 export const ENTERPRISE_CONTACT_URL = 'mailto:info@viraza.net?subject=Contact%20Viraza';
 
@@ -17,7 +17,7 @@ const config = {
     dark: '#040406',
   },
   defaultSocialImage: '/social-previews/main.jpg',
-  githubOrg: 'virazait',
+  githubOrg: 'previraza',
   githubRepo: 'viraza',
   blog: {
     postsPerPage: 20,

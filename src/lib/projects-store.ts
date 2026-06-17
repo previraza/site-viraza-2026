@@ -11,6 +11,7 @@ export interface IProjectData {
   body: string;
   externalUrl: string;
   externalLabel: string;
+  hasPricing?: boolean;
 }
 
 export async function readProjects(): Promise<IProjectData[]> {

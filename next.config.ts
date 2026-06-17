@@ -119,7 +119,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/github',
-        destination: 'https://github.com/virazait',
+        destination: 'https://github.com/previraza',
         permanent: false,
       },
       {

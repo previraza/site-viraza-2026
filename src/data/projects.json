@@ -6,7 +6,8 @@
     "description": "Accompagnement stratégique pour votre transformation digitale.",
     "body": "Nous accompagnons les entreprises dans leur transformation digitale en offrant des solutions personnalisées pour optimiser leur infrastructure informatique, améliorer leurs processus métiers et accroître leur productivité. Audit de votre système d'information, définition de votre stratégie digitale, choix technologiques et accompagnement à la transformation numérique.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": true
   },
   {
     "slug": "myeduc-360",
@@ -15,7 +16,8 @@
     "description": "Gestion scolaire intelligente et centralisée.",
     "body": "Notre solution complète de gestion administrative pour les établissements scolaires : inscriptions, dossiers élèves, emplois du temps, gestion du personnel, facturation, reporting et communication avec les parents. Tout est centralisé et accessible en ligne.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": false
   },
   {
     "slug": "srip",
@@ -24,7 +26,8 @@
     "description": "Gestion des programmes éducatifs.",
     "body": "Plateforme de référencement et d'indexation des programmes d'enseignement. Simplifiez la gestion des curricula, le suivi académique et l'évaluation des apprentissages grâce à un outil pensé pour les institutions éducatives.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": false
   },
   {
     "slug": "syrcow",
@@ -33,7 +36,8 @@
     "description": "Chatbot à l'IA générative.",
     "body": "Notre chatbot nouvelle génération basé sur l'intelligence artificielle. Répondez aux questions de vos étudiants ou clients 24h/24, automatisez le support et assistez vos équipes avec des réponses précises et contextualisées en temps réel.",
     "externalUrl": "https://syrcow.cloud",
-    "externalLabel": "Visiter syrcow.cloud"
+    "externalLabel": "Visiter syrcow.cloud",
+    "hasPricing": false
   },
   {
     "slug": "maintenance",
@@ -42,7 +46,8 @@
     "description": "Gérez votre infrastructure en toute sérénité.",
     "body": "Déléguez la gestion complète de votre infrastructure IT : supervision 24/7, maintenance préventive et curative, sécurité proactive, sauvegarde automatisée et support technique. Vous vous concentrez sur votre métier, on gère le reste.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": false
   },
   {
     "slug": "allocation-server",
@@ -51,7 +56,8 @@
     "description": "Solutions cloud scalables.",
     "body": "Solutions d'allocation de serveurs et d'hébergement cloud. Déployez vos applications sur une infrastructure scalable et sécurisée avec haute disponibilité, sauvegarde automatisée et conformité RGPD pour toutes vos données sensibles.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": true
   },
   {
     "slug": "autres",
@@ -60,6 +66,7 @@
     "description": "Développement et solutions personnalisées.",
     "body": "Découvrez l'ensemble de nos solutions sur mesure : développement d'applications mobiles et web, solutions e-learning, portails collaboratifs, systèmes de gestion et bien plus. Chaque projet est unique, chaque solution est personnalisée.",
     "externalUrl": "",
-    "externalLabel": ""
+    "externalLabel": "",
+    "hasPricing": false
   }
 ]

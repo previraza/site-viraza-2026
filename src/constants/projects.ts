@@ -9,6 +9,7 @@ export interface IProject {
   body: string;
   externalUrl?: string;
   externalLabel?: string;
+  hasPricing?: boolean;
 }
 
 const DATA_FILE = path.join(process.cwd(), 'src/data/projects.json');
