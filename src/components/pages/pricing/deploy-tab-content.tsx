@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import NextLink from 'next/link';
 import enterpriseBackgroundImage from '@/assets/images/pricing/enterprise-bg.jpg';
-import { deployPricingPlans, enterpriseData, tableFeatures } from '@/constants/pricing';
+import { deployPricingPlans, enterpriseData, pricingContentData } from '@/constants/pricing';
 import { Check } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
@@ -65,6 +65,9 @@ const EnterpriseContent = ({
 export default function DeployTabContent() {
   return (
     <>
+      <h2 className="marked-title font-display text-3xl leading-[1.125] whitespace-pre-line text-foreground sm:text-4xl md:whitespace-normal lg:text-[40px] xl:max-w-[640px] xl:text-[2.75rem] mt-16 mb-8">
+        {pricingContentData.consultingTitle}
+      </h2>
       <Hero
         plans={deployPricingPlans}
         bottomContent={<EnterpriseContent enterpriseData={enterpriseData} />}

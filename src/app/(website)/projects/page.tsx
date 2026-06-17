@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { getProjects } from '@/constants/projects';
 import { getMetadata } from '@/lib/get-metadata';
 import { Label } from '@/components/ui/label';
+import ProjectsHero from '@/components/pages/projects/hero';
 
 export const metadata = getMetadata({
   title: 'Projets',
@@ -15,20 +16,15 @@ export default async function ProjectsPage() {
 
   return (
     <main className="relative w-full overflow-x-clip bg-background text-white">
-      <div className="container py-30 md:py-45">
-        <div className="pt-8 md:pt-12 xl:pt-20">
-          <Label>Projets</Label>
-        </div>
-        <div className="mt-8 max-w-3xl">
-          <h1 className="text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-white md:text-[3.5rem] lg:text-[4rem]">
-            Nos projets
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-gray-60">
-            Découvrez l&apos;ensemble des solutions que nous développons pour accompagner la
-            transformation digitale des entreprises et institutions.
-          </p>
-        </div>
-        <div className="mt-16 grid gap-px bg-gray-20 sm:grid-cols-2 lg:grid-cols-3">
+      <ProjectsHero
+        title="Nos projets"
+        description="Découvrez l'ensemble des solutions que nous développons pour accompagner la transformation digitale des entreprises et institutions."
+        ctaLabel="Discutons de votre projet"
+        ctaHref="https://viraza.net/contact"
+      />
+      <div className="container py-20 md:py-30">
+        <Label>Réalisations</Label>
+        <div className="mt-8 grid gap-px bg-gray-20 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <Link
               key={project.slug}

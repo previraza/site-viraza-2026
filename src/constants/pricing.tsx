@@ -15,13 +15,20 @@ export const pricingContentData = {
   tabs: [
     {
       value: 'deploy',
-      label: 'Solutions',
+      label: 'Solutions SaaS',
     },
     {
       value: 'api-management',
-      label: 'Services',
+      label: 'Services IT',
     },
   ],
+  consultingTitle: (
+    <>
+      <mark>Consulting IT</mark>
+      {'\n'}
+      Un accompagnement sur mesure pour votre transformation digitale.
+    </>
+  ),
   faq: {
     mainTitle: 'FAQ',
     title: 'Des questions ?',
@@ -30,181 +37,160 @@ export const pricingContentData = {
   usageCalculator: {
     title: (
       <>
-        Un devis
+        Allocation Server
         {'\n'}
-        <mark>sur mesure.</mark>
+        <mark>Un devis sur mesure.</mark>
       </>
     ),
-    subtitle: `Votre budget suit vos besoins réels. Pas de bonds
-    entre les forfaits. Payez uniquement pour ce que vous utilisez.
-    you actually use. Available on every plan.`,
-    actionText: 'Read the docs',
+    subtitle: `Infrastructure cloud scalable et sécurisée. Bénéficiez d'un hébergement haute disponibilité avec sauvegarde automatisée et conformité RGPD.`,
+    actionText: 'Demander un devis',
     actionHref: 'https://viraza.net/contact',
   },
   calculator: {
-    title: 'Calculator',
-    subtitle: 'Estimate monthly costs based on your infrastructure needs.',
+    title: 'Allocation Server',
+    subtitle: 'Estimez le coût de votre infrastructure cloud.',
     fieldLabels: {
-      cpu: 'Avg active CPU / instance',
-      memory: 'Avg memory / instance',
-      instances: 'Number of instances',
-      egress: 'Egress / month',
+      cpu: 'vCPU moyen / instance',
+      memory: 'Mémoire moyenne / instance',
+      instances: "Nombre d'instances",
+      egress: 'Trafic sortant / mois',
     },
     fieldTooltips: {
-      cpu: 'Average active virtual CPU per running instance. Billed on actual usage, not your configured ceiling.',
-      memory: 'Average memory used per running instance. Billed on actual usage, not your configured ceiling.',
-      instances: 'Total number of instances running simultaneously',
-      egress: 'Total outbound network data transfer per month',
+      cpu: 'Nombre moyen de vCPU par instance. Facturé à la consommation réelle.',
+      memory: 'Mémoire moyenne utilisée par instance. Facturé à la consommation réelle.',
+      instances: "Nombre total d'instances exécutées simultanément",
+      egress: 'Volume total de données sortantes par mois',
     },
     memoryOptions: [
-      { value: '0.25', label: '1/4 GB' },
-      { value: '0.5', label: '1/2 GB' },
-      { value: '1', label: '1 GB' },
-      { value: '2', label: '2 GB' },
-      { value: '4', label: '4 GB' },
-      { value: '8', label: '8 GB' },
-      { value: '16', label: '16 GB' },
+      { value: '0.25', label: '1/4 Go' },
+      { value: '0.5', label: '1/2 Go' },
+      { value: '1', label: '1 Go' },
+      { value: '2', label: '2 Go' },
+      { value: '4', label: '4 Go' },
+      { value: '8', label: '8 Go' },
+      { value: '16', label: '16 Go' },
     ],
     cpuPlaceholder: '0.5',
     estimate: {
-      heading: 'Estimate',
-      usageBased: 'Usage-based',
+      heading: 'Estimation',
+      usageBased: 'À la consommation',
       total: 'Total',
       perMonth: '/ mo',
     },
     rateLabels: {
-      vcpu: 'vCPU/sec',
-      memory: 'Memory/GB/sec',
-      egress: 'Egress/GB',
+      vcpu: 'vCPU/s',
+      memory: 'Mémoire/Go/s',
+      egress: 'Trafic/Go',
     },
   },
 };
 
 export const deployPricingPlans: IPricingPlan[] = [
   {
-    id: 'starter',
-    name: 'Starter',
-    // lucideIcon: "gem",
-    description: 'Ship small production workloads with simple usage-based billing.',
-    monthlyPrice: 5,
-    annualPrice: 5,
+    id: 'basic',
+    name: 'Basic',
+    description: 'Audit et conseil mensuel pour petites structures.',
+    monthlyPrice: 500,
+    annualPrice: 500,
     currency: 'USD',
     priceMonthlyLabel: ' / mo',
     priceAnnualLabel: ' / mo',
     priceType: 'number',
     features: {
-      title: 'What’s included',
+      title: 'Ce qui est inclus',
       items: [
         {
-          label: 'Up to 2 vCPU / 2 GB per Instance',
+          label: 'Audit trimestriel',
           lucideIcon: 'check',
         },
         {
-          label: '1 concurrent build',
+          label: 'Rapport de performance',
           lucideIcon: 'check',
         },
         {
-          label: 'Custom domains',
-          lucideIcon: 'check',
-        },
-        {
-          label: 'Includes $5/mo usage credits',
-          lucideIcon: 'check',
-        },
-        {
-          label: 'Email support',
+          label: 'Support email',
           lucideIcon: 'check',
         },
       ],
     },
     link: {
-      label: 'Get started',
-      href: APP_URL,
+      label: 'Choisir',
+      href: ENTERPRISE_CONTACT_URL,
     },
   },
   {
     id: 'pro',
-    name: 'Pro',
-    // lucideIcon: "gem",
-    description: 'Run production APIs with more compute and headroom.',
-    monthlyPrice: 25,
-    annualPrice: 25,
+    name: 'Professionnel',
+    description: 'Accompagnement complet avec consultant dédié.',
+    monthlyPrice: 1500,
+    annualPrice: 1500,
     currency: 'USD',
     priceMonthlyLabel: ' / mo',
     priceAnnualLabel: ' / mo',
     priceType: 'number',
     isMostPopular: true,
     features: {
-      title: 'What’s included',
+      title: 'Ce qui est inclus',
       items: [
         {
-          label: 'Up to 8 vCPU / 8 GB per Instance',
+          label: 'Audit mensuel',
           lucideIcon: 'check',
         },
         {
-          label: '1 concurrent build',
+          label: 'Rapport de performance',
           lucideIcon: 'check',
         },
         {
-          label: 'Custom domains',
+          label: 'Consultant dédié',
           lucideIcon: 'check',
         },
         {
-          label: 'Includes $25/mo usage credits',
-          lucideIcon: 'check',
-        },
-        {
-          label: 'Email support',
+          label: 'Support prioritaire',
           lucideIcon: 'check',
         },
       ],
     },
     link: {
-      label: 'Get started',
-      href: APP_URL,
+      label: 'Choisir',
+      href: ENTERPRISE_CONTACT_URL,
     },
   },
   {
-    id: 'business',
-    name: 'Business',
-    // lucideIcon: "gem",
-    description: 'For higher workloads and growing teams at global scale.',
+    id: 'enterprise',
+    name: 'Enterprise',
+    description: 'Partenariat stratégique global pour grandes organisations.',
     currency: 'USD',
-    // labelBeforePrice: "For pricing",
-    monthlyPrice: 50,
-    annualPrice: 50,
-    priceMonthlyLabel: ' / mo',
-    priceAnnualLabel: ' / mo',
-    priceType: 'number',
+    monthlyPriceDisplay: 'Sur mesure',
+    annualPriceDisplay: 'Sur mesure',
+    priceType: 'string',
     features: {
-      title: 'What’s included',
+      title: 'Ce qui est inclus',
       items: [
         {
-          label: 'Up to 16 vCPU / 32 GB per Instance',
+          label: 'Audit hebdomadaire',
           lucideIcon: 'check',
         },
         {
-          label: '1 concurrent build',
+          label: 'Rapport détaillé',
           lucideIcon: 'check',
         },
         {
-          label: 'Custom domains',
-          lucideIcon: 'check',
-        },
-
-        {
-          label: 'Includes $50/mo usage credits',
+          label: 'Consultant dédié',
           lucideIcon: 'check',
         },
         {
-          label: 'Email support',
+          label: 'Support 24/7',
+          lucideIcon: 'check',
+        },
+        {
+          label: 'Intervention sur site',
           lucideIcon: 'check',
         },
       ],
     },
     link: {
-      label: 'Get started',
-      href: APP_URL,
+      label: 'Contactez-nous',
+      href: ENTERPRISE_CONTACT_URL,
     },
   },
 ];

@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { getProjectBySlug, getProjects } from '@/constants/projects';
 import { getMetadata } from '@/lib/get-metadata';
-import { Label } from '@/components/ui/label';
+import ProjectsHero from '@/components/pages/projects/hero';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,25 +32,23 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <main className="relative w-full overflow-x-clip bg-background text-white">
-      <div className="container py-30 md:py-45">
-        <div className="pt-8 md:pt-12 xl:pt-20">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-gray-60 transition-colors hover:text-white"
-          >
-            <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-            Retour aux projets
-          </Link>
-          <Label>{project.title}</Label>
-        </div>
-        <div className="mt-8 max-w-3xl">
-          <h1 className="text-[2.5rem] leading-[1.1] tracking-[-0.03em] text-white md:text-[3.5rem] lg:text-[4rem]">
-            {project.title}
-          </h1>
-          <p className="mt-2 text-lg text-gray-60">{project.subtitle}</p>
-        </div>
+      <ProjectsHero
+        title={project.title}
+        description={project.subtitle}
+        ctaLabel={project.externalUrl ? project.externalLabel || 'Visiter le site' : 'Contactez-nous'}
+        ctaHref={project.externalUrl || 'https://viraza.net/contact'}
+      />
+      <div className="container py-20 md:py-30">
+        <Link
+          href="/projects"
+          className="inline-flex items-center gap-2 text-sm text-gray-60 transition-colors hover:text-white"
+        >
+          <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Retour aux projets
+        </Link>
+
         <div className="mt-12 max-w-3xl">
           <p className="text-[0.9375rem] leading-relaxed text-gray-90 sm:text-base">
             {project.body}
