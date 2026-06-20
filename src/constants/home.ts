@@ -11,7 +11,7 @@ import observeDashImage from '@/assets/images/home/observe/dash.png';
 import portalDocsImage from '@/assets/images/home/portal/docs.png';
 import portalKeysImage from '@/assets/images/home/portal/keys.png';
 import portalZeroImage from '@/assets/images/home/portal/zero.png';
-import { APP_URL, GITHUB_URL, SIGN_UP_URL } from '@/configs/website-config';
+import { GITHUB_URL } from '@/configs/website-config';
 import { buildDeployTechnologyLogos, homePortfolioLogos } from '@/constants/logos';
 import { Alignment, Fit } from '@rive-app/react-canvas';
 
@@ -21,8 +21,7 @@ export const homeHeaderLinks = {
     { id: 'github', label: 'GitHub', href: GITHUB_URL, metric: '5.3k' },
   ],
   auth: [
-    { id: 'login', label: 'Login', href: APP_URL },
-    { id: 'signUp', label: 'Sign Up', href: SIGN_UP_URL },
+    { id: 'contact', label: 'Nous contacter', href: '/contact' },
   ],
 } as const;
 
@@ -31,8 +30,8 @@ export const homeContentData = {
     title: "Votre partenaire numérique de confiance",
     description:
       "Viraza conçoit des solutions IT sur mesure pour transformer votre entreprise. De l'infrastructure cloud aux applications métier, nous accélérons votre transformation digitale.",
-    primaryCta: { label: 'Start for free', href: APP_URL },
-    secondaryCta: { label: 'View on GitHub', href: GITHUB_URL },
+    primaryCta: { label: 'Découvrir nos solutions', href: '/projects' },
+    secondaryCta: { label: 'Nous contacter', href: '/contact' },
     poster: { src: heroPosterImage.src, width: 1533, height: 908 },
     videos: [
       { src: '/videos/home/hero-av1.mp4', type: 'video/mp4; codecs=av01' },
@@ -171,15 +170,15 @@ export const homeContentData = {
   },
   gateway: {
     heading:
-      'Protect and control traffic at the edge. Offload access control and rate limiting to global gateways.',
+      "La plateforme de gestion éducative 360° pour les établissements d'excellence.",
     riveDefaults: {
       autoBind: true,
       alignment: Alignment.BottomCenter,
     },
     cards: [
       {
-        title: 'Auth + Keys',
-        body: 'Manage API keys end to end and control who can call what.',
+        title: 'Gestion Financière',
+        body: 'Centralisez la gestion des frais académiques, la facturation, le suivi de solvabilité et les bordereaux bancaires en un seul endroit.',
         webgl: {
           imageSrc: gatewayAuthDepthImage.src,
           appearanceEffect: 'natural' as const,
@@ -200,8 +199,8 @@ export const homeContentData = {
           'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-1 xl:col-start-1 xl:row-start-1',
       },
       {
-        title: 'Global platform',
-        body: 'Edge gateway enforces access and routes requests to the closest instance for low latency.',
+        title: 'Module Académique',
+        body: 'Gérez les inscriptions, promotions, cours, notes et délibérations en ligne avec un suivi des performances en temps réel.',
         rive: {
           src: '/rive/home/gateway/global-platform.riv',
           fonts: { urls: { regular: '/rive/home/JetBrainsMono-Regular.ttf' } },
@@ -213,8 +212,8 @@ export const homeContentData = {
           'aspect-[505/902] sm:aspect-auto sm:h-auto sm:min-h-0 sm:col-start-2 sm:row-start-1 sm:row-span-2 xl:col-start-2 xl:row-span-2',
       },
       {
-        title: 'Rate limits',
-        body: 'Set limits per IP, user, or key and enforce them close to your users.',
+        title: 'Gestion Administrative',
+        body: 'Centralisez les dossiers du personnel et des étudiants, gérez les affectations et suivez les flux internes en toute transparence.',
         rive: {
           src: '/rive/home/gateway/rate-limits.riv',
           fonts: { urls: { regular: '/rive/home/JetBrainsMono-Regular.ttf' } },
@@ -223,8 +222,8 @@ export const homeContentData = {
           'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-2 xl:col-start-1 xl:row-start-2',
       },
       {
-        title: 'Validation',
-        body: 'Enforce request rules early to catch bad traffic before it hits your API.',
+        title: 'Tableau de Bord',
+        body: 'Visualisez en temps réel la santé financière de votre établissement avec des rapports consolidés et des indicateurs clés.',
         rive: {
           src: '/rive/home/gateway/validation.riv',
           stateMachines: 'State Machine 1',
@@ -233,8 +232,8 @@ export const homeContentData = {
           'h-[clamp(20rem,76vw,26.25rem)] sm:h-[21rem] md:h-[24rem] xl:h-auto sm:col-start-1 sm:row-start-3 xl:col-start-3 xl:row-start-1',
       },
       {
-        title: 'Analytics',
-        body: 'Access real-time insights into your API usage without adding custom instrumentation.',
+        title: 'Sécurité & Conformité',
+        body: 'Contrôle d\'accès granulaire par rôles, audit trail complet de chaque transaction et conformité aux normes RGPD.',
         rive: {
           src: '/rive/home/gateway/analytics.riv',
           autoBind: false,
@@ -249,12 +248,12 @@ export const homeContentData = {
     label: 'Pourquoi choisir Viraza',
     items: [
       {
-        title: 'Expertise locale',
-        text: "Viraza est une équipe d'experts passionnés basés en Afrique. Nous comprenons les enjeux locaux et proposons des solutions adaptées à votre contexte.",
+        title: 'Expertise éducative',
+        text: "Avec MyEduc 360, nous maîtrisons les enjeux spécifiques du secteur éducatif : gestion des frais, inscriptions, notes, délibérations et reporting financier. Une solution ERP complète pensée pour les établissements d'excellence.",
       },
       {
         title: 'Accompagnement sur mesure',
-        text: "Chaque projet est unique. Nous vous accompagnons de la conception à la maintenance, avec un suivi personnalisé et une écoute constante de vos besoins.",
+        text: "Chaque établissement est unique. De l'audit initial à la maintenance, nous vous accompagnons avec une solution personnalisée, des formations adaptées et un support réactif.",
       },
     ],
   },

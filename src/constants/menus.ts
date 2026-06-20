@@ -34,11 +34,17 @@ export const MENUS = {
           description: 'Clear definitions for API terms',
           icon: '/icons/header/glossary.svg',
         },
+        {
+          label: 'Événements',
+          href: '/evenements',
+          description: 'Webinaires et événements à venir',
+          icon: '/icons/header/glossary.svg',
+        },
       ],
     },
     { label: 'Projects', href: '/projects' },
+    { label: 'Événements', href: '/evenements' },
     { label: 'Pricing', href: '/pricing' },
-          { label: 'Docs', href: 'https://viraza.net/docs' },
   ],
   footer: {
     description: 'Des solutions IT innovantes pour votre entreprise',
@@ -58,8 +64,8 @@ export const MENUS = {
         items: [
           { label: 'Blog', href: '/blog' },
           { label: 'Projects', href: '/projects' },
+          { label: 'Événements', href: '/evenements' },
           { label: 'Changelog', href: '/changelog' },
-    { label: 'Docs', href: 'https://viraza.net/docs' },
           { label: 'Glossary', href: '/glossary' },
           { label: 'Feature Request', href: 'https://feedback.viraza.net/' },
           // { label: 'Case Studies', href: '/case-studies' },

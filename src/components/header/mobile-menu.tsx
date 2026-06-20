@@ -8,6 +8,7 @@ import { homeHeaderLinks } from '@/constants/home';
 import { ChevronDown } from 'lucide-react';
 
 import { IMenuItem } from '@/types/common';
+import { IEvent } from '@/lib/events/events';
 import { cn, isExternalLink } from '@/lib/utils';
 import { useTrack } from '@/hooks/use-tracking';
 import { Link } from '@/components/ui/link';
@@ -20,8 +21,16 @@ function MobileMenu({ items }: MobileMenuProps) {
   const track = useTrack();
   const [open, setOpen] = useState(false);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const [contactLink, rendezvousLink] = homeHeaderLinks.auth;
+  const [currentEvent, setCurrentEvent] = useState<IEvent | null>(null);
+  const [contactLink] = homeHeaderLinks.auth;
   const pathname = usePathname();
+
+  useEffect(() => {
+    fetch('/api/events/current')
+      .then((res) => res.json())
+      .then((data) => setCurrentEvent(data))
+      .catch(() => setCurrentEvent(null));
+  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -190,20 +199,29 @@ function MobileMenu({ items }: MobileMenuProps) {
 
           <div className="mt-5 flex flex-col gap-2">
             <div className="flex gap-1">
+              {currentEvent && (
+                <Link
+                  href={`/evenements/${currentEvent.slug}`}
+                  variant="primary"
+                  className="flex-1 bg-background text-foreground hover:bg-gray-12"
+                  onClick={() => {
+                    track('event', { location: 'navigation-mobile' });
+                    setOpen(false);
+                  }}
+                >
+                  {currentEvent.title}
+                </Link>
+              )}
               <Link
                 href={contactLink.href}
                 variant="secondary"
                 className="flex-1 border-gray-70 text-background"
-                onClick={() => track('contact', { location: 'navigation-mobile' })}
+                onClick={() => {
+                  track('contact', { location: 'navigation-mobile' });
+                  setOpen(false);
+                }}
               >
                 {contactLink.label}
-              </Link>
-              <Link
-                href={rendezvousLink.href}
-                className="flex-1 bg-background text-foreground hover:bg-gray-12"
-                onClick={() => track('rendezvous', { location: 'navigation-mobile' })}
-              >
-                {rendezvousLink.label}
               </Link>
             </div>
           </div>

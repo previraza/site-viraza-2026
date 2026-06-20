@@ -6,7 +6,7 @@ export async function GET(
   { params }: { params: Promise<{ slug: string }> },
 ) {
   const { slug } = await params;
-  const item = await getContent('blog', slug);
+  const item = await getContent('changelog', slug);
   if (!item) return NextResponse.json({ error: 'Introuvable' }, { status: 404 });
   return NextResponse.json(item);
 }
@@ -18,7 +18,7 @@ export async function PUT(
   try {
     const { slug } = await params;
     const { frontmatter, content } = await request.json();
-    await saveContent('blog', slug, frontmatter, content);
+    await saveContent('changelog', slug, frontmatter, content);
     return NextResponse.json({ success: true });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Erreur inconnue';
@@ -32,7 +32,7 @@ export async function DELETE(
 ) {
   try {
     const { slug } = await params;
-    await deleteContent('blog', slug);
+    await deleteContent('changelog', slug);
     return NextResponse.json({ success: true });
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Erreur inconnue';

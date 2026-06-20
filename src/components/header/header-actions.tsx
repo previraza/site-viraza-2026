@@ -4,13 +4,21 @@ import { useEffect, useState } from 'react';
 import { homeHeaderLinks } from '@/constants/home';
 
 import { useTrack } from '@/hooks/use-tracking';
+import { IEvent } from '@/lib/events/events';
 import { Link } from '@/components/ui/link';
 
 export default function HeaderActions() {
   const track = useTrack();
   const [onLightSection, setOnLightSection] = useState(false);
-  const [facebookLink] = homeHeaderLinks.social;
-  const [contactLink, rendezvousLink] = homeHeaderLinks.auth;
+  const [currentEvent, setCurrentEvent] = useState<IEvent | null>(null);
+  const [contactLink] = homeHeaderLinks.auth;
+
+  useEffect(() => {
+    fetch('/api/events/current')
+      .then((res) => res.json())
+      .then((data) => setCurrentEvent(data))
+      .catch(() => setCurrentEvent(null));
+  }, []);
 
   useEffect(() => {
     const lightSections = document.querySelectorAll<HTMLElement>('[data-header-theme="light"]');
@@ -36,12 +44,16 @@ export default function HeaderActions() {
   return (
     <nav aria-label="Actions" className="hidden items-center gap-16 lg:flex">
       <div className="flex items-center gap-1">
-        <Link href={facebookLink.href} size="small" target="_blank" rel="noopener noreferrer">
-          {facebookLink.label}
-        </Link>
-      </div>
-
-      <div className="flex items-center gap-1">
+        {currentEvent && (
+          <Link
+            href={`/evenements/${currentEvent.slug}`}
+            variant="primary"
+            size="small"
+            onClick={() => track('event', { location: 'navigation' })}
+          >
+            {currentEvent.title}
+          </Link>
+        )}
         <Link
           href={contactLink.href}
           variant={onLightSection ? 'primaryBlack' : 'secondary'}
@@ -50,13 +62,6 @@ export default function HeaderActions() {
           onClick={() => track('contact', { location: 'navigation' })}
         >
           {contactLink.label}
-        </Link>
-        <Link
-          href={rendezvousLink.href}
-          size="small"
-          onClick={() => track('rendezvous', { location: 'navigation' })}
-        >
-          {rendezvousLink.label}
         </Link>
       </div>
     </nav>

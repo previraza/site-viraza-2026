@@ -1,32 +1,29 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 
 export function DeleteButton({ slug }: { slug: string }) {
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
 
   async function handleDelete() {
     if (!confirm('Supprimer ce projet ?')) return;
-    setLoading(true);
+
     const res = await fetch(`/api/projects/${slug}`, { method: 'DELETE' });
+
     if (res.ok) {
       router.refresh();
     } else {
-      alert('Erreur lors de la suppression.');
-      setLoading(false);
+      const data = await res.json();
+      alert(data.error || 'Erreur lors de la suppression');
     }
   }
 
   return (
     <button
-      type="button"
       onClick={handleDelete}
-      disabled={loading}
-      className="text-sm text-red-dot hover:underline disabled:opacity-50"
+      className="rounded-md bg-red-600 px-3 py-1.5 text-xs text-white transition-colors hover:bg-red-700"
     >
-      {loading ? 'Suppression...' : 'Supprimer'}
+      Supprimer
     </button>
   );
 }
